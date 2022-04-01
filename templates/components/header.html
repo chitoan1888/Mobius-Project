@@ -1,0 +1,74 @@
+{% load static %}
+
+<header class="header">
+  <div class="header-content">
+    <div class="container d-flex align-items-center">
+      <div class="header__logo">
+        <a href="./">
+          <img
+            src="{% static 'images/mobius-logo.png' %}"
+            alt="Mobius"
+            width="160"
+            height="50"
+          />
+        </a>
+      </div>
+
+      <nav class="header__navbar flex-fill">
+        <ul class="navbar__list d-flex justify-content-center">
+          <li class="navbar__item">
+            <a class="navbar__link active" href="./">
+              <i class="fas fa-home"></i>
+              <span>Trang chủ</span>
+            </a>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="./">
+              <i class="fas fa-mobile-alt"></i>
+              <span>Điện thoại<span>
+            </a>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="./">
+              <i class="fas fa-headphones-alt"></i>
+              <span>Phụ kiện</span>
+            </a>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="./">
+              <i class="fas fa-info-circle"></i>
+              <span>Liên hệ</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header__search-btn click-cursor">
+        <i class="fas fa-search" style="font-size: 18px"></i>
+      </div>
+
+      <div class="header__login click-cursor">
+        <a href="#" class="login__link">
+          <i class="fas fa-user" style="font-size: 18px"></i>
+          Đăng nhập
+        </a>
+      </div>
+
+      <div class="header__cart click-cursor">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart__total-num">0</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="header__search-bar-wrap">
+    <form action="" class="header__search-bar container">
+      <input
+        type="text"
+        class="header__search-input"
+        placeholder="Tìm kiếm sản phẩm"
+      />
+      <button class="btn header__search-submit">Tìm kiếm</button>
+    </form>
+  </div>
+</header>

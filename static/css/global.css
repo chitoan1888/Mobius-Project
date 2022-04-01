@@ -1,0 +1,54 @@
+html {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    overflow: auto;
+}
+
+* {
+    box-sizing: inherit;
+    font-family: inherit;
+    font-family: 'Work Sans', sans-serif;
+}
+
+a, a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+ul, ol {
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.btn {
+    outline: none;
+    border: none;
+    background-color: #70c3a7;
+    font-weight: 700;
+    color: #fff;
+}
+
+.btn:hover {
+    color: #fff;
+}
+
+.app {
+    background-color: #f3f3f3;
+    min-height: 100vh;
+}
+
+.click-cursor {
+    cursor: pointer;
+}

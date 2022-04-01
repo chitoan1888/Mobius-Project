@@ -8,20 +8,20 @@ from django.db.models import Q
 
 # Create your views here.
 class HomePageView(TemplateView):
-    template_name = 'home.html'
+    template_name = 'app.html'
 
 # def search(request):
 #     searched = request.POST.get('searched')
-#     name = Phone.objects.filter(Q(name__icontains=searched)) 
-#     price = Phone.objects.filter(Q(price__icontains=searched))  
+#     name = Phone.objects.filter(Q(name__icontains=searched))
+#     price = Phone.objects.filter(Q(price__icontains=searched))
 
-    
+
 #     context = {
 #         'name': name,
 #         'price': price,
 #         'searched': searched,
 #     }
-    
+
 #     return render(request, 'search_results.html', context)
 
 def search(request):
@@ -44,5 +44,4 @@ def search(request):
 
 
 
-    
-        
+

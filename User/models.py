@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
-from numpy import true_divide
+# from numpy import true_divide
 from Phone.models import Phone
 import datetime, uuid
 

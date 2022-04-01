@@ -1,0 +1,5 @@
+:root {
+    --gradient-color: linear-gradient(to right, #78d0a7 0%, #4169a3 100%);
+    --search-bar-height: 50px;
+    --header-height: 84.8px;
+}
