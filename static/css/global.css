@@ -45,10 +45,29 @@ li {
 }
 
 .app {
+    position: relative;
     background-color: #f3f3f3;
     min-height: 100vh;
 }
 
 .click-cursor {
     cursor: pointer;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.overlay.active {
+    z-index: 98;
+    opacity: 1;
+    transition: all 0.5s;
 }
