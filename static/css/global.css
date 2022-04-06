@@ -1,73 +1,132 @@
 html {
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-    height: 100%;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 body {
-    height: 100%;
-    overflow: auto;
+  height: 100%;
+  overflow: auto;
 }
 
 * {
-    box-sizing: inherit;
-    font-family: inherit;
-    font-family: 'Work Sans', sans-serif;
+  box-sizing: inherit;
+  font-family: inherit;
+  font-family: "Work Sans", sans-serif;
 }
 
-a, a:hover {
-    text-decoration: none;
-    color: #000;
+a,
+a:hover {
+  text-decoration: none;
+  color: #000;
 }
 
-ul, ol {
-    padding-left: 0;
-    list-style: none;
-    margin: 0;
+ul,
+ol {
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 .btn {
-    outline: none;
-    border: none;
-    background-color: #70c3a7;
-    font-weight: 700;
-    color: #fff;
+  outline: none;
+  border: none;
+  background-color: var(--prymari-color);
+  font-weight: 700;
+  color: #fff;
 }
 
 .btn:hover {
-    color: #fff;
+  color: #fff;
 }
 
 .app {
-    position: relative;
-    background-color: #f3f3f3;
-    min-height: 100vh;
+  position: relative;
+  background-color: #f3f3f3;
+  min-height: 100vh;
 }
 
 .click-cursor {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.content {
+  margin-top: var(--header-height);
 }
 
 .overlay {
-    position: fixed;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.overlay.active {
+  z-index: 98;
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+.text-gradient {
+  background-image: var(--gradient-color);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-animation {
+  display: block;
+  outline: none;
+  padding: 12px 31.5px;
+  position: relative;
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  border: 1px solid #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.btn-animation span {
+    position: relative;
+    z-index: 2;
+    transition: color 0.5s
+}
+
+.btn-animation::before {
+    content: " ";
+    position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.2);
-    z-index: -1;
-    opacity: 0;
-    transition: all 0.5s;
+    background-image: var(--gradient-color);
+    z-index: 1;
+    opacity: 0.5;
+    transform: scaleX(0);
+    transform-origin: left center;
+    -webkit-transition: cubic-bezier(0,.43,.99,.62) 0.3s;
+    transition: cubic-bezier(0,.43,.99,.62) 0.3s;
 }
 
-.overlay.active {
-    z-index: 98;
+.btn-animation:hover::before {
+    transform: scaleX(1);
     opacity: 1;
-    transition: all 0.5s;
+}
+
+.btn-animation:hover span {
+    color: #fff;
+    transition: color 0.5s
 }

@@ -8,7 +8,7 @@ from django.db.models import Q
 
 # Create your views here.
 class HomePageView(TemplateView):
-    template_name = 'app.html'
+    template_name = './pages/home.html'
 
 # def search(request):
 #     searched = request.POST.get('searched')

@@ -1,0 +1,65 @@
+{% load static %}
+
+<div class="swiper banner">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide banner-item">
+            <img src="{% static 'images/banner/slide-1.jpg' %}" />
+            <div class="slide__content">
+                <h3>Smart Collection</h3>
+                <h4>Latest Foldable Smartphone</h4>
+                <a href="#" class="btn-animation banner-btn">
+                    <span>Shop now</span>
+                </a>
+            </div>
+        </div>
+        <div class="swiper-slide banner-item">
+            <img src="{% static 'images/banner/slide-1.jpg' %}" />
+            <div class="slide__content">
+                <h3>Smart Collection</h3>
+                <h4>Latest Foldable Smartphone</h4>
+                <a href="#" class="btn-animation banner-btn">
+                    <span>Shop now</span>
+                </a>
+            </div>
+        </div>
+        <div class="swiper-slide banner-item">
+            <img src="{% static 'images/banner/slide-2.jpg' %}" />
+            <div class="slide__content">
+                <h3>Smart Collection</h3>
+                <h4>Latest Foldable Smartphone</h4>
+                <a href="#" class="btn-animation banner-btn">
+                    <span>Shop now</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="swiper-button-next swiper-btn text-gradient">
+        <i class="fas fa-chevron-circle-right"></i>
+    </div>
+    <div class="swiper-button-prev swiper-btn text-gradient">
+        <i class="fas fa-chevron-circle-left"></i>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".banner", {
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+  });
+</script>
