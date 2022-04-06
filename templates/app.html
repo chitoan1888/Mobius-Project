@@ -42,7 +42,7 @@
     <link rel="icon" href="{% static 'images/favicon.ico' %}" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     {% block head %}{% endblock %}
-    <title>Mobius</title>
+    <title>{% block title %}{% endblock %}</title>
   </head>
 
   <body>

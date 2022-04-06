@@ -1,34 +1,14 @@
 {% extends '../app.html' %}
 {% load static %}
 
+{% block title %}Mobius{% endblock %}
+
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/banner.css' %}" type="text/css" />
+<link rel="stylesheet" href="{% static 'css/company.css' %}" type="text/css" />
 {% endblock %}
 
 {%block content %}
     {% include 'components/banner.html'%}
-{% endblock %}
-
-{% block scripts %}
-<!-- Swiper JS -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-<!-- Initialize Swiper -->
-<script>
-  var swiper = new Swiper(".banner", {
-    loop: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-    },
-  });
-</script>
+    {% include 'components/companies.html'%}
 {% endblock %}

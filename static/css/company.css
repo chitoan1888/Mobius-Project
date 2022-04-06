@@ -1,0 +1,13 @@
+.companies {
+    padding: 70px 0;
+}
+
+.company-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.company-item span {
+    margin-top: 10px;
+    font-size: 500;
+}
