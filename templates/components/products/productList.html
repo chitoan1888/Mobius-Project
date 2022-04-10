@@ -1,0 +1,58 @@
+
+{% if filterOn == "new_products" %}
+    <div class="container">
+        <div class="products-new__header d-flex align-items-center justify-content-between flex-wrap flex-md-nowrap">
+            <h3 class="m-0 text-gradient order-1">Sản phẩm mới</h3>
+            <div class="products-new__tabs d-flex align-items-center justify-content-center justify-content-md-start flex-fill h-100 order-3 order-md-2">
+                <div class="products-new__tab active">Nổi bật</div>
+                <div class="products-new__tab">Bán chạy nhất</div>
+                <div class="products-new__tab">Mới ra mắt</div>
+            </div>
+            <div class="product-new__navigation d-flex align-items-center order-2 order-md-3">
+                <div class="product-new__btn-prev">
+                    <i class="fas fa-caret-square-left"></i>
+                </div>
+                <div class="product-new__btn-next">
+                    <i class="fas fa-caret-square-right"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper product-new__list">
+            <div class="swiper-wrapper">
+              {% for product in products %}
+                  {% include 'components/products/productItem.html' with product=product style="swiper" %}
+              {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const productNewSwiper = new Swiper(".product-new__list", {
+          navigation: {
+            nextEl: ".product-new__btn-next",
+            prevEl: ".product-new__btn-prev",
+          },
+          slidesPerView: 4,
+          spaceBetween: 10,
+          autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+          },
+          breakpoints: {
+            "@0.00": {
+              slidesPerView: 1,
+            },
+            "@0.75": {
+              slidesPerView: 2,
+            },
+            "@1.00": {
+              slidesPerView: 3,
+            },
+            "@1.50": {
+              slidesPerView: 4,
+            }
+          }
+        });
+      </script>
+{% endif %}

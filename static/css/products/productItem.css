@@ -1,0 +1,27 @@
+.product__wrapper {
+    height: 400px;
+    width: 100%;
+    padding: 10px;
+}
+
+.product__item {
+    height: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.product__thumbnail {
+    padding-top: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.product__name {
+    font-weight: 700;
+    text-align: center;
+}
+
+.product__price {
+    color: #fd475a;
+}

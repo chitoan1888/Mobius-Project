@@ -1,0 +1,21 @@
+{% load humanize %}
+
+{% if filterOn == "new_products" %}
+<div class="swiper-slide">
+    <div class="product__wrapper">
+        <div class="product__item">
+            <div
+                class="product__thumbnail"
+                style="
+                    background-image: url('/media/{{ product.thumbnail }}')
+                "
+            ></div>
+            <div class="text-gradient product__name">{{ product.name }}</div>
+            <div class="product__price">
+                <strong>{{ product.price|intcomma }}đ</strong>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endif %}

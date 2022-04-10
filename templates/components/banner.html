@@ -33,25 +33,22 @@
             </div>
         </div>
     </div>
-    <div class="swiper-button-next swiper-btn text-gradient">
+    <div id="banner-btn-next" class="swiper-button-next swiper-btn text-gradient">
         <i class="fas fa-chevron-circle-right"></i>
     </div>
-    <div class="swiper-button-prev swiper-btn text-gradient">
+    <div id="banner-btn-prev" class="swiper-button-prev swiper-btn text-gradient">
         <i class="fas fa-chevron-circle-left"></i>
     </div>
     <div class="swiper-pagination"></div>
 </div>
 
-<!-- Swiper JS -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
 <!-- Initialize Swiper -->
 <script>
-  var swiper = new Swiper(".banner", {
+  const bannerSwiper = new Swiper(".banner", {
     loop: true,
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: "#banner-btn-next",
+      prevEl: "#banner-btn-prev",
     },
     pagination: {
         el: ".swiper-pagination",
