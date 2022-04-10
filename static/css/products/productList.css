@@ -1,0 +1,34 @@
+.products-new__header h3 {
+    font-weight: 600;
+}
+
+.products-new__tabs {
+    margin: 0 40px;
+}
+
+.products-new__tab {
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.products-new__tab:hover,
+.products-new__tab.active {
+    color: var(--primary-color)
+}
+
+.product-new__navigation {
+    color: var(--primary-color);
+    font-size: 24px;
+}
+
+.product-new__navigation div {
+    cursor: pointer;
+    margin: 4px;
+}
+
+@media (max-width: 767px) {
+    .products-new__tabs {
+        margin: 0;
+    }
+}

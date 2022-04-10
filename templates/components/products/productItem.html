@@ -1,0 +1,38 @@
+{% load humanize %}
+{% load mathfilters %}
+
+{% if filterOn == "new_products" %}
+<div class="swiper-slide">
+    <div class="product__wrapper">
+        <a href="/dien-thoai/{{ product.name }}" class="product__item">
+            <div
+                class="product__thumbnail"
+                style="
+                    background-image: url('/media/{{ product.thumbnail }}')
+                "
+            ></div>
+            <div class="text-gradient product__name">{{ product.name }}</div>
+            <div class="product__price">
+                {% if product.saleOff == 0 %}
+                    <strong>{{ product.price|intcomma }}đ</strong>
+                {% elif product.saleOff > 0 %}
+                    <strong>{{ 0|sub:product.price|mul:product.saleOff|add:product.price|intcomma }}đ</strong>
+                    <strike>{{ product.price|intcomma }}đ</strike>
+                {% endif %}
+            </div>
+
+            <div class="product__btn-group">
+                <div class="btn product__btn product__addCart">
+                    <i class="fas fa-cart-plus"></i>
+                </div>
+                <div class="btn product__btn product__like">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="btn product__btn product__view">
+                    <i class="fas fa-eye"></i>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+{% endif %}

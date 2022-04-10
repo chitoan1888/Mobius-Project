@@ -1,0 +1,66 @@
+{% load static %}
+
+<div class="container">
+    <div class="swiper companies">
+        <div class="swiper-wrapper company-wrapper">
+            <div class="swiper-slide company-item">
+                <img src="{% static 'images/company-logo/apple.png' %}" />
+                <span>Apple</span>
+            </div>
+            <div class="swiper-slide company-item">
+              <img src="{% static 'images/company-logo/asus.png' %}" />
+              <span>Asus</span>
+            </div>
+            <div class="swiper-slide company-item">
+              <img src="{% static 'images/company-logo/htc.png' %}" />
+              <span>HTC</span>
+            </div>
+            <div class="swiper-slide company-item">
+              <img src="{% static 'images/company-logo/samsung.png' %}" />
+              <span>Samsung</span>
+            </div>
+            <div class="swiper-slide company-item">
+              <img src="{% static 'images/company-logo/huawei.png' %}" />
+              <span>Huawei</span>
+            </div>
+            <div class="swiper-slide company-item">
+              <img src="{% static 'images/company-logo/lg.png' %}" />
+              <span>LG</span>
+            </div>
+            <div class="swiper-slide company-item">
+              <img src="{% static 'images/company-logo/vivo.png' %}" />
+              <span>Vivo</span>
+            </div>
+            <div class="swiper-slide company-item">
+              <img src="{% static 'images/company-logo/xiaomi.png' %}" />
+              <span>Xiaomi</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const companySwipper = new Swiper(".companies", {
+      slidesPerView: 6,
+      spaceBetween: 10,
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        "@0.00": {
+          slidesPerView: 2,
+        },
+        "@0.75": {
+          slidesPerView: 3,
+        },
+        "@1.00": {
+          slidesPerView: 4,
+        },
+        "@1.50": {
+          slidesPerView: 6,
+        },
+      },
+    });
+  </script>
