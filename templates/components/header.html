@@ -15,7 +15,13 @@
       </div>
 
       <nav class="header__navbar flex-fill">
-        <ul class="navbar__list d-flex justify-content-center">
+        <ul class="d-flex justify-content-center navbar__list">
+          <li class="navbar__item login">
+            <a class="navbar__link" href="./">
+              <i class="fas fa-user" style="font-size: 18px"></i>
+              <span>Đăng nhập<span>
+            </a>
+          </li>
           <li class="navbar__item">
             <a class="navbar__link active" href="./">
               <i class="fas fa-home"></i>
@@ -71,4 +77,11 @@
       <button class="btn header__search-submit">Tìm kiếm</button>
     </form>
   </div>
+
+  <label for="toggleMenu" class="navbar__mobile-close-btn">
+    <input type="checkbox" id="toggleMenu"/>
+    <div class="line first"></div>
+    <div class="line second"></div>
+    <div class="line third"></div>
+  </label>
 </header>
