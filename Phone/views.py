@@ -3,26 +3,26 @@ from unicodedata import name
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Phone
-from django.views.generic import TemplateView, ListView
+from django.views.generic import TemplateView, ListView, DetailView
 from django.db.models import Q
-
-# Create your views here.
-class HomePageView(TemplateView):
-    template_name = './pages/home.html'
-
-# def search(request):
-#     searched = request.POST.get('searched')
-#     name = Phone.objects.filter(Q(name__icontains=searched))
-#     price = Phone.objects.filter(Q(price__icontains=searched))
+from .models import Phone
 
 
-#     context = {
-#         'name': name,
-#         'price': price,
-#         'searched': searched,
-#     }
+class HomeView(TemplateView):
+    template_name = "./pages/home.html"
 
-#     return render(request, 'search_results.html', context)
+    def get(self, request):
+        phones = Phone.objects.all()
+        return render(request, self.template_name, {'phones': phones})
+
+def product(request):
+    context = {
+        "first_name": "Anjaneyulu",
+        "last_name": "Batta",
+        "address": "Hyderabad, India"
+    }
+    template_name="component"
+    return render(request, template_name, context)
 
 def search(request):
     if request.method == 'GET':
