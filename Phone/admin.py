@@ -15,7 +15,6 @@ class PhoneAdmin(admin.ModelAdmin):
     class Media:
         js = ['/js/tiny_mce.js']
 
-
 @admin.register(PhoneImage)
 class PhoneImageAdmin(admin.ModelAdmin):
     pass

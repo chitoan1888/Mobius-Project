@@ -7,6 +7,8 @@ from django.views.generic import TemplateView, ListView, DetailView
 from django.db.models import Q
 from .models import Phone
 
+class HomeView(TemplateView):
+    template_name = "./pages/home.html"
 
 class HomeView(TemplateView):
     template_name = "./pages/home.html"
