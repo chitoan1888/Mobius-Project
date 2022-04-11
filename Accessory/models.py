@@ -3,15 +3,20 @@ from django.contrib.postgres.fields import ArrayField
 from tinymce import models as tinymce_models
 import uuid, datetime
 
-from django.forms import DateField
-
 def create_phoneImage_directory(instance, filename):
     dirname = instance.phone.name
-    return "phones/{}/images/{}".format(dirname, filename)
+    return "accessory/{}/images/{}".format(dirname, filename)
 
 def create_phoneThumbnail_directory(instance, filename):
     dirname = instance.name
-    return "phones/{}/thumb/{}".format(dirname, filename)
+    return "accessory/{}/thumb/{}".format(dirname, filename)
+
+AccessoryCategory = (
+    (1, "Tai nghe"),
+    (2, "Loa"),
+    (3, "Dây sạc"),
+    (4, "Smartwatch")
+)
 
 Brands = (
     ("apple", "Apple"),
@@ -24,10 +29,11 @@ Brands = (
     ("xiaomi", "Xiaomi"),
 )
 
-class Phone(models.Model):
+class Accessory(models.Model):
     id = models.CharField(primary_key=True, max_length=100, unique=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=200)
-    brand = models.CharField(max_length=100, default='Apple', choices=Brands)
+    brand = models.CharField(max_length=100, default='apple', choices=Brands)
+    category = models.IntegerField(max_length=1, default=1, choices=AccessoryCategory)
     dayOfManufacture = models.DateField(default=datetime.date.today, blank=True, null=True)
     insurance = models.DateField(default=datetime.date.today, blank=True, null=True)
     thumbnail = models.ImageField(upload_to=create_phoneThumbnail_directory, default=None)
@@ -42,9 +48,9 @@ class Phone(models.Model):
     def __str__(self):
         return self.name
 
-class PhoneImage(models.Model):
-    phone = models.ForeignKey(Phone, default=None, on_delete=models.CASCADE)
+class AccessoryImage(models.Model):
+    accessory = models.ForeignKey(Accessory, default=None, on_delete=models.CASCADE)
     images = models.ImageField(upload_to=create_phoneImage_directory)
 
     def __str__(self):
-        return self.phone.name
+        return self.accessory.name

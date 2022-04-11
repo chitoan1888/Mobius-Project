@@ -47,7 +47,9 @@ INSTALLED_APPS = [
     'mathfilters',
     'tinymce',
     'User',
-    'Phone'
+    'Phone',
+    'Accessory',
+    'Blogs',
 ]
 
 MIDDLEWARE = [

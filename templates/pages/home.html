@@ -13,5 +13,6 @@
 {%block content %}
     {% include 'components/banner.html'%}
     {% include 'components/companies.html'%}
-    {% include 'components/products/productList.html' with filterOn="new_products" products=phones %}
+    {% include 'components/products/productList.html' with isHome="true" filterOn="phone" products=phones %}
+    {% include 'components/products/productList.html' with isHome="true" filterOn="accessories" products=accessories %}
 {% endblock %}
