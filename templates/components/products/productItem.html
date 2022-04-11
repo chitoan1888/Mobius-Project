@@ -3,8 +3,9 @@
 
 {% if filterOn == "new_products" %}
 <div class="swiper-slide">
+{% endif %}
     <div class="product__wrapper">
-        <a href="/dien-thoai/{{ product.name }}" class="product__item">
+        <a href="/dien-thoai/{{ product.name.split|join:"-" }}" class="product__item">
             <div
                 class="product__thumbnail"
                 style="
@@ -34,5 +35,6 @@
             </div>
         </a>
     </div>
+{% if filterOn == "new_products" %}
 </div>
 {% endif %}

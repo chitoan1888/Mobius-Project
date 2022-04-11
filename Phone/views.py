@@ -15,15 +15,6 @@ class HomeView(TemplateView):
         phones = Phone.objects.all()
         return render(request, self.template_name, {'phones': phones})
 
-def product(request):
-    context = {
-        "first_name": "Anjaneyulu",
-        "last_name": "Batta",
-        "address": "Hyderabad, India"
-    }
-    template_name="component"
-    return render(request, template_name, context)
-
 def search(request):
     if request.method == 'GET':
         query= request.GET.get('q')

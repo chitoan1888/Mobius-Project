@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
+from tinymce import models as tinymce_models
 import uuid, datetime
 
 from django.forms import DateField
@@ -19,7 +20,7 @@ class Phone(models.Model):
     dayOfManufacture = models.DateField(default=datetime.date.today, blank=True, null=True)
     insurance = models.DateField(default=datetime.date.today, blank=True, null=True)
     thumbnail = models.ImageField(upload_to=create_phoneThumbnail_directory, default=None)
-    description = models.TextField(max_length=None)
+    description = tinymce_models.HTMLField(max_length=None)
     price = models.IntegerField(default=0)
     saleOff = models.FloatField(default=0)
     likes = models.IntegerField(default=0)
