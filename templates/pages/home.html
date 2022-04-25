@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="{% static 'css/products/productList.css' %}" type="text/css" />
 <link rel="stylesheet" href="{% static 'css/products/productItem.css' %}" type="text/css" />
 {% endblock %}
-
+{% csrf_token %}
 {%block content %}
     {% include 'components/banner.html'%}
     {% include 'components/companies.html'%}

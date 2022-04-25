@@ -24,11 +24,11 @@ def search(request):
             results= Phone.objects.filter(lookups).distinct()
             context={'results': results,
                      'submitbutton': submitbutton}
-            return render(request, 'search_results.html', context)
+            return render(request, 'components/search_results.html', context)
         else:
-            return render(request, 'search_results.html')
+            return render(request, 'components/search_results.html')
     else:
-        return render(request, 'search_results.html')
+        return render(request, 'components/search_results.html')
 
 
 
