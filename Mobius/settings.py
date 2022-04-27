@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'mathfilters',
     'tinymce',
+    'crispy_forms',
     'User',
     'Phone',
     'Accessory',

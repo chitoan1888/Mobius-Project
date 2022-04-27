@@ -54,7 +54,7 @@
       </div>
 
       <div class="header__login click-cursor">
-        <a href="#" class="login__link">
+        <a href="/login" class="login__link">
           <i class="fas fa-user" style="font-size: 18px"></i>
           Đăng nhập
         </a>
@@ -68,13 +68,15 @@
   </div>
 
   <div class="header__search-bar-wrap">
-    <form action="" class="header__search-bar container">
+    <form action="search/" class="header__search-bar container"  method="GET" value="{{request.GET.q}}">
       <input
         type="text"
+        name="q" 
+        value="{{request.GET.q}}" 
         class="header__search-input"
         placeholder="Tìm kiếm sản phẩm"
       />
-      <button class="btn header__search-submit">Tìm kiếm</button>
+      <button type="submit" class="btn header__search-submit">Tìm kiếm</button>
     </form>
   </div>
 
