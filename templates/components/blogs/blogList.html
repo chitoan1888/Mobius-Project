@@ -1,0 +1,49 @@
+{% if isHome %}
+<div class="container">
+  <div
+    class="blogs-new__header d-flex align-items-center justify-content-between flex-wrap flex-md-nowrap"
+  >
+    <h3 class="m-0 text-gradient order-1">
+      Tin tức
+    </h3>
+    <div
+      class="blog-new__navigation d-flex align-items-center order-2 order-md-3"
+    >
+      <div class="blog-new__btn-prev {{ filterOn }}">
+        <i class="fas fa-caret-square-left"></i>
+      </div>
+      <div class="blog-new__btn-next {{ filterOn }}">
+        <i class="fas fa-caret-square-right"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="swiper blogs-new__list {{ filterOn }}">
+    <div class="swiper-wrapper">
+      {% for blog in blogs %}
+        {% include 'components/blogs/blogItem.html' with blog=blog style="swiper" %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script>
+  const blogSwiper = new Swiper(".blogs-new__list", {
+    navigation: {
+      nextEl: ".blog-new__btn-next",
+      prevEl: ".blog-new__btn-prev",
+    },
+    slidesPerView: 1,
+    spaceBetween: 10,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      767: {
+        slidesPerView: 2,
+      },
+    },
+  });
+</script>
+{% endif %}
