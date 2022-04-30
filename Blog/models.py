@@ -4,13 +4,14 @@ from tinymce import models as tinymce_models
 import uuid, datetime
 
 def create_phoneThumbnail_directory(instance, filename):
-    dirname = instance.name
+    dirname = instance.id
     return "blog/{}/thumb/{}".format(dirname, filename)
 
 # Create your models here.
-class Blogs(models.Model):
+class Blog(models.Model):
     id = models.CharField(primary_key=True, max_length=100, unique=True, default=uuid.uuid4, editable=False)
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=500)
+    shortDescription = models.CharField(max_length=500, default=None, null=True, blank=True)
     content = tinymce_models.HTMLField(max_length=None)
     releaseDate = models.DateField(default=datetime.date.today, blank=True, null=True)
     thumbnail = models.ImageField(upload_to=create_phoneThumbnail_directory, default=None)
@@ -19,4 +20,4 @@ class Blogs(models.Model):
         models.CharField(max_length=50),
     )
     def __str__(self):
-        return self.name
+        return self.title

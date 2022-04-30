@@ -2,10 +2,11 @@ from re import search
 from unicodedata import name
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Phone
 from django.views.generic import TemplateView, ListView, DetailView
 from django.db.models import Q
-from .models import Phone
+from Phone.models import Phone
+from Blog.models import Blog
+from Accessory.models import Accessory
 
 
 class HomeView(TemplateView):
@@ -13,7 +14,13 @@ class HomeView(TemplateView):
 
     def get(self, request):
         phones = Phone.objects.all()
-        return render(request, self.template_name, {'phones': phones})
+        accessories = Accessory.objects.all()
+        blogs = Blog.objects.all()
+        return render(request, self.template_name, {
+            'phones': phones,
+            'accessories': accessories,
+            'blogs': blogs,
+        })
 
 def search(request):
     if request.method == 'GET':

@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="{% static 'css/company.css' %}" type="text/css" />
 <link rel="stylesheet" href="{% static 'css/products/productList.css' %}" type="text/css" />
 <link rel="stylesheet" href="{% static 'css/products/productItem.css' %}" type="text/css" />
+<link rel="stylesheet" href="{% static 'css/blogs/blogList.css' %}" type="text/css" />
+<link rel="stylesheet" href="{% static 'css/blogs/blogItem.css' %}" type="text/css" />
 {% endblock %}
 {% csrf_token %}
 {%block content %}
@@ -15,4 +17,5 @@
     {% include 'components/companies.html'%}
     {% include 'components/products/productList.html' with isHome="true" filterOn="phone" products=phones %}
     {% include 'components/products/productList.html' with isHome="true" filterOn="accessories" products=accessories %}
+    {% include 'components/blogs/blogList.html' with isHome="true" blogs=blogs%}
 {% endblock %}
