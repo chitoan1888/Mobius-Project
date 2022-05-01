@@ -1,0 +1,153 @@
+{% extends '../app.html' %}
+{% load static %}
+
+{% block title %}Mobius - Đăng ký{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/auth.css' %}" type="text/css" />
+{% endblock %}
+
+{%block content %}
+    {% load crispy_forms_tags %}
+    <div class="overlay auth-overlay">
+        <div class="auth-logo">
+            <a
+                class="auth-home-link"
+                href="./"
+            >
+                <img class="white-logo" src="{% static 'images/mobius-logo-white.png' %}" />
+            </a>
+        </div>
+        <div class="auth-container">
+            <h1 class="text-gradient auth-title">Đăng ký</h1>
+            {% if errorMessage %}
+                <div class="auth-error">{{errorMessage}}</div>
+            {% endif %}
+            <form id="register-form" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <div class="form-control">
+                        <input
+                            type="text"
+                            name="username"
+                            id="username"
+                            value="{{request.POST.username}}"
+                            placeholder=" "
+                            class="form-input"
+                        />
+                        <span class="form-icon">
+                            <i class="fas fa-user"></i>
+                        </span>
+                        <label
+                            for="username"
+                            class="form-label"
+                        >
+                            Tên đăng nhập*
+                        </label>
+                        <div class="form-bottom-line"></div>
+                    </div>
+                    <span class="form-message"></span>
+
+                </div>
+                <div class="form-group">
+                    <div class="form-control">
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            value="{{request.POST.email}}"
+                            placeholder=" "
+                            class="form-input"
+                        />
+                        <span class="form-icon">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                        <label
+                            for="email"
+                            class="form-label"
+                        >
+                            Email
+                        </label>
+                        <div class="form-bottom-line"></div>
+                    </div>
+                    <span class="form-message"></span>
+                </div>
+                <div class="form-group">
+                    <div class="form-control">
+                        <input
+                            type="password"
+                            name="password1"
+                            id="password"
+                            value="{{request.POST.password1}}"
+                            placeholder=" "
+                            class="form-input"
+                        />
+                        <span class="form-icon">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                        <label
+                            for="password"
+                            class="form-label"
+                        >
+                            Mật khẩu*
+                        </label>
+                        <div class="form-bottom-line"></div>
+                    </div>
+                    <span class="form-message"></span>
+                </div>
+                <div class="form-group">
+                    <div class="form-control">
+                        <input
+                            type="password"
+                            name="password2"
+                            id="password-confirmation"
+                            value="{{request.POST.password2}}"
+                            placeholder=" "
+                            class="form-input"
+                        />
+                        <span class="form-icon">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                        <label
+                            for="password-confirmation"
+                            class="form-label"
+                        >
+                            Xác nhận lại mật khẩu*
+                        </label>
+                        <div class="form-bottom-line"></div>
+                    </div>
+                    <span class="form-message"></span>
+                </div>
+                <div class="form-submit-btn-wrap">
+                    <button class="form-submit-btn" type="submit">
+                        <span>Đăng ký</span>
+                    </button>
+                </div>
+            </form>
+            <p class="auth-text">Bạn đã có tài khoản? Hãy đăng nhập <a href="/login">tại đây</a></p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/validator.js' %}"></script>
+<script>
+    Validator({
+        form: '#register-form',
+        formGroupSelector: '.form-group',
+        errorSelector: '.form-message',
+        rules: [
+            Validator.isRequire('#username', 'Vui lòng nhập tên đăng nhập'),
+            Validator.isRequire('#email', 'Vui lòng nhập vào Email'),
+            Validator.isEmail('#email', 'Email không hợp lệ hoặc không đúng'),
+            Validator.isRequire('#password', 'Vui lòng nhập mật khẩu'),
+            Validator.minLength('#password', 8),
+            Validator.isRequire('#password-confirmation', 'Vui lòng nhập lại mật khẩu'),
+            Validator.isConfirmed('#password-confirmation', function() {
+                return document.querySelector('#register-form #password').value;
+            }, 'Nhập lại mật khẩu không chính xác')
+
+        ],
+    });
+</script>
+{% endblock %}
