@@ -1,13 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate
-# Create your views here.
 from .forms import NewUserForm
-from django.contrib.auth import login
 from django.contrib import messages
 from Phone.models import Phone
 from Blog.models import Blog
 from Accessory.models import Accessory
+
 
 def register_request(request):
 	if request.method == "POST":
@@ -19,11 +18,10 @@ def register_request(request):
 			user = form.save()
 			login(request, user)
 			messages.success(request, "Registration successful." )
-			return redirect("register")
+			return redirect("login")
 		messages.error(request, "Unsuccessful registration. Invalid information.")
 	form = NewUserForm()
 	return render (request=request, template_name="pages/register.html", context={"register_form":form})
-
 
 
 def login_request(request):
