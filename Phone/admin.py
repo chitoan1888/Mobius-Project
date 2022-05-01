@@ -7,7 +7,7 @@ class PhoneImageAdmin(admin.StackedInline):
 
 @admin.register(Phone)
 class PhoneAdmin(admin.ModelAdmin):
-    list_display = ('name', 'brand', 'description', 'dayOfManufacture', 'insurance', 'price', 'likes', 'sold', 'keywordsSearch')
+    list_display = ('name', 'brand', 'dayOfManufacture', 'insurance', 'price', 'likes', 'sold', 'keywordsSearch')
     inlines = [PhoneImageAdmin]
     class Meta:
        model = Phone
