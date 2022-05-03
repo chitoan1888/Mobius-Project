@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, logout, authenticate
 from .forms import NewUserForm
 from django.contrib import messages
 from Phone.models import Phone
@@ -42,3 +42,9 @@ def login_request(request):
 			errorMess = "Tên đăng nhập hoặc mật khẩu không tồn tại"
 	form = AuthenticationForm()
 	return render(request=request, template_name="pages/login.html", context={"errorMessage": errorMess})
+
+
+def logout_request(request):
+	logout(request)
+	messages.info(request, "You have successfully logged out.") 
+	return redirect("home_view")
