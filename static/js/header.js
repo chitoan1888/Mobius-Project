@@ -16,3 +16,7 @@ $('.overlay').click(() => {
         $('.overlay').removeClass("active");
     }
 })
+
+$('#toggleLoginMenu').click(() => {
+    $('.navbar__mobile-login').toggleClass("active");
+})
