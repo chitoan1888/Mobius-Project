@@ -16,3 +16,7 @@ $('.overlay').click(() => {
         $('.overlay').removeClass("active");
     }
 })
+
+$('#toggleLoginMenu').click(() => {
+    $('#toggleLoginMenu').toggleClass("active");
+})
