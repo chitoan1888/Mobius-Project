@@ -3,9 +3,6 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from .forms import NewUserForm
 from django.contrib import messages
-from Phone.models import Phone
-from Blog.models import Blog
-from Accessory.models import Accessory
 
 
 def register_request(request):
@@ -46,5 +43,5 @@ def login_request(request):
 
 def logout_request(request):
 	logout(request)
-	messages.info(request, "You have successfully logged out.") 
-	return redirect("home_view")
+	messages.info(request, "You have successfully logged out.")
+	return redirect("./")
