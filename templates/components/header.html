@@ -15,22 +15,41 @@
       </div>
 
       <nav class="header__navbar flex-fill">
+        {% if user.is_authenticated %}
+        <div class="navbar__mobile-login">
+          <div id="toggleLoginMenu" class="d-flex user-menu">
+            <span class="flex-fill">
+              <i class="fas fa-user" style="font-size: 18px"></i>
+              <span>{{user}}</span>
+            </span>
+            <span class="user-menu-arrow">
+              <i class="fas fa-angle-down"></i>
+            </span>
+          </div>
+          <ul class="nav__user-menu-list">
+            <li>
+              <a href="./userInfo/{{user}}" class="d-flex">
+                <i class="fas fa-user-cog"></i>
+                <span class="ms-1">Chỉnh sửa thông tin</span>
+              </a>
+            </li>
+            <li class="logout">
+              <a href="./logout">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Đăng xuất</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      {% else %}
+        <div class="navbar__mobile-login">
+          <a class="navbar__link" href="./">
+            <i class="fas fa-user" style="font-size: 18px"></i>
+            <span>Đăng nhập<span>
+          </a>
+        </div>
+      {% endif %}
         <ul class="d-flex justify-content-center navbar__list">
-          {% if user.is_authenticated %}
-            <li class="navbar__item login">
-              <a class="navbar__link" href="./userInfo/{{user}}">
-                <i class="fas fa-user" style="font-size: 18px"></i>
-                <span>{{user}}<span>
-              </a>
-            </li>
-          {% elif user != "AnonymousUser" %}
-            <li class="navbar__item login">
-              <a class="navbar__link" href="./">
-                <i class="fas fa-user" style="font-size: 18px"></i>
-                <span>Đăng nhập<span>
-              </a>
-            </li>
-          {% endif %}
           <li class="navbar__item">
             <a class="navbar__link active" href="./">
               <i class="fas fa-home"></i>
@@ -63,11 +82,26 @@
       </div>
 
       {% if user.is_authenticated %}
-        <div class="header__login click-cursor">
-          <a href="./userInfo/{{user}}" class="login__link">
+        <div class="header__user-menu header__login click-cursor">
+          <div class="login__link">
             <i class="fas fa-user" style="font-size: 18px"></i>
-            {{ user }}
-          </a>
+            <span>{{ user }}<span>
+          </div>
+
+          <ul class="header__user-menu-list">
+            <li>
+              <a href="./userInfo/{{user}}">
+                <i class="fas fa-user-cog"></i>
+                Chỉnh sửa thông tin
+              </a>
+            </li>
+            <li class="logout">
+              <a href="./logout">
+                <i class="fas fa-sign-out-alt"></i>
+                Đăng xuất
+              </a>
+            </li>
+          </ul>
         </div>
       {% else %}
         <div class="header__login click-cursor">
