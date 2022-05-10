@@ -16,8 +16,8 @@
 
       <nav class="header__navbar flex-fill">
         {% if user.is_authenticated %}
-        <div id="toggleLoginMenu" class="navbar__mobile-login">
-          <div class="d-flex user-menu">
+        <div class="navbar__mobile-login">
+          <div id="toggleLoginMenu" class="d-flex user-menu">
             <span class="flex-fill">
               <i class="fas fa-user" style="font-size: 18px"></i>
               <span>{{user}}</span>

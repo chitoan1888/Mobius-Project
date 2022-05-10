@@ -123,8 +123,9 @@
 }
 
 .nav__user-menu-list span,
-.nav__user-menu-list i {
-  color: #fff;
+.nav__user-menu-list i,
+#toggleLoginMenu span {
+  color: #fff !important;
 }
 
 .user-menu-arrow {

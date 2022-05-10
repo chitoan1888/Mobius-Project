@@ -18,5 +18,5 @@ $('.overlay').click(() => {
 })
 
 $('#toggleLoginMenu').click(() => {
-    $('#toggleLoginMenu').toggleClass("active");
+    $('.navbar__mobile-login').toggleClass("active");
 })
