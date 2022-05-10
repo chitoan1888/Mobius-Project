@@ -1,0 +1,168 @@
+.auth-overlay {
+  z-index: 100;
+  background-image: var(--gradient-color);
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-logo {
+  position: absolute;
+  top: 100px;
+}
+
+.auth-home-link {
+  display: block;
+  width: 200px;
+  height: fit-content;
+}
+
+.auth-logo img {
+  width: 100%;
+}
+
+.auth-container {
+  background-color: #fff;
+  padding: 30px 50px;
+  border-radius: 16px;
+  max-width: 443px;
+}
+
+.auth-title {
+  font-weight: 600;
+  text-align: center;
+}
+
+.auth-error {
+  color: red;
+  text-align: center;
+  font-style: italic;
+}
+
+.form-group {
+  padding: 15px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.form-label,
+.form-control {
+  color: rgb(138, 135, 135);
+}
+
+.form-label {
+  position: absolute;
+  top: 6px;
+  left: 38px;
+  transition: all 0.5s;
+  cursor: text;
+}
+
+.form-control {
+  position: relative;
+  border-width: 2px;
+  border-color: transparent transparent currentColor transparent;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-input {
+  flex: 1;
+  margin-left: 10px;
+  border: none;
+  outline: none;
+}
+
+.form-bottom-line {
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  transform: translateX(-100%);
+  transition: all 0.5s;
+}
+
+.form-icon {
+  transition: all 0.5s;
+}
+
+.form-input:focus ~ .form-icon,
+.form-input:not(:placeholder-shown) ~ .form-icon {
+  color: #78d0a7 !important;
+  transition: all 0.5s;
+}
+
+.form-input:focus ~ .form-label,
+.form-input:not(:placeholder-shown) ~ .form-label {
+  top: -15px;
+  left: 12px;
+  font-weight: 600;
+  transition: all 0.5s;
+  background-image: var(--gradient-color);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.form-input:focus ~ .form-bottom-line,
+.form-input:not(:placeholder-shown) ~ .form-bottom-line {
+  background-image: var(--gradient-color);
+  transform: translateX(0);
+  transition: all 0.5s;
+}
+
+.form-submit-btn-wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-submit-btn {
+  padding: 10px 30px;
+  outline: none;
+  border: 1px solid rgb(171, 171, 171);
+  background-color: #78d0a7;
+  color: #fff;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.auth-text {
+  text-align: center;
+}
+
+.auth-text a {
+  color: #78d0a7;
+}
+
+.auth-text a:hover {
+  text-decoration: underline;
+}
+
+.form-message,
+.form-group.invalid .form-icon,
+.form-group.invalid .form-label {
+    color: red;
+}
+
+.form-message {
+  font-style: italic;
+}
+
+.form-group.invalid .form-control{
+    border-bottom-color: red;
+}
+
+@media (max-width: 376px) {
+  .auth-logo {
+    top: 50px;
+  }
+  .auth-container {
+    padding: 30px 10px;
+    margin: 0 12px;
+  }
+}

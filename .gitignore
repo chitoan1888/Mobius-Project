@@ -6,6 +6,9 @@ __pycache__
 db.sqlite3
 static/media/uploads/*
 static/media/phones
+static/media/blog
+static/media/accessory
+
 
 # Environments
 .env

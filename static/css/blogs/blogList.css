@@ -1,0 +1,38 @@
+.blogs-new__header {
+    margin-top: 50px;
+}
+
+.blogs-new__header h3 {
+    font-weight: 600;
+}
+
+.blogs-new__tabs {
+    margin: 0 40px;
+}
+
+.blogs-new__tab {
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.blogs-new__tab:hover,
+.blogs-new__tab.active {
+    color: var(--primary-color)
+}
+
+.blog-new__navigation {
+    color: var(--primary-color);
+    font-size: 24px;
+}
+
+.blog-new__navigation div {
+    cursor: pointer;
+    margin: 4px;
+}
+
+@media (max-width: 767px) {
+    .blogs-new__tabs {
+        margin: 0;
+    }
+}

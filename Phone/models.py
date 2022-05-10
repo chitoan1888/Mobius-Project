@@ -26,7 +26,7 @@ Brands = (
 
 class Phone(models.Model):
     id = models.CharField(primary_key=True, max_length=100, unique=True, default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=500)
     brand = models.CharField(max_length=100, default='Apple', choices=Brands)
     dayOfManufacture = models.DateField(default=datetime.date.today, blank=True, null=True)
     insurance = models.DateField(default=datetime.date.today, blank=True, null=True)

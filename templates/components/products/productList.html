@@ -34,10 +34,11 @@
 </div>
 
 <script>
+  {% if filterOn == 'phone' %}
     const phoneSwiper = new Swiper(".product-new__list.phone", {
       navigation: {
-        nextEl: ".product-new__btn-next phone",
-        prevEl: ".product-new__btn-prev phone",
+        nextEl: ".product-new__btn-next.phone",
+        prevEl: ".product-new__btn-prev.phone",
       },
       slidesPerView: 4,
       spaceBetween: 10,
@@ -46,25 +47,25 @@
         disableOnInteraction: false,
       },
       breakpoints: {
-        "@0.00": {
+        375: {
           slidesPerView: 1,
         },
-        "@0.75": {
+        768: {
           slidesPerView: 2,
         },
-        "@1.00": {
+        1024: {
           slidesPerView: 3,
         },
-        "@1.50": {
+        1400: {
           slidesPerView: 4,
         }
       }
     });
-
+  {% else %}
     const accessoriesSwiper = new Swiper(".product-new__list.accessories", {
       navigation: {
-        nextEl: ".product-new__btn-next accessories",
-        prevEl: ".product-new__btn-prev accessories",
+        nextEl: ".product-new__btn-next.accessories",
+        prevEl: ".product-new__btn-prev.accessories",
       },
       slidesPerView: 4,
       spaceBetween: 10,
@@ -73,19 +74,20 @@
         disableOnInteraction: false,
       },
       breakpoints: {
-        "@0.00": {
+        375: {
           slidesPerView: 1,
         },
-        "@0.75": {
+        768: {
           slidesPerView: 2,
         },
-        "@1.00": {
+        1024: {
           slidesPerView: 3,
         },
-        "@1.50": {
+        1400: {
           slidesPerView: 4,
         }
       }
     });
-  </script>
+  {% endif %}
+</script>
 {% endif %}

@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'User',
     'Phone',
     'Accessory',
-    'Blogs',
+    'Blog',
 ]
 
 MIDDLEWARE = [
