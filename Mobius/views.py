@@ -13,9 +13,9 @@ class HomeView(TemplateView):
     template_name = "./pages/home.html"
 
     def get(self, request):
-        phones = Phone.objects.all()
-        accessories = Accessory.objects.all()
-        blogs = Blog.objects.all()
+        phones = Phone.objects.order_by('dayOfManufacture')
+        accessories = Accessory.objects.order_by('dayOfManufacture')
+        blogs = Blog.objects.order_by('releaseDate')
         return render(request, self.template_name, {
             'phones': phones,
             'accessories': accessories,

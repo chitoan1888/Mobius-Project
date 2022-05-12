@@ -1,0 +1,49 @@
+<div class="product-configuration">
+    <h3>Cấu hình sản phẩm</h3>
+    <div
+        class="product-thumb"
+        style="background-image: url('/media/{{ product.thumbnail }}')"
+    ></div>
+    <ul class="configuration-list">
+        <li class="configuration-item">
+            <span>Công nghệ màn hình: </span>
+            <span>{{ product.screenTechnique }}</span>
+        </li>
+        <li class="configuration-item">
+            <span>Độ phân giải: </span>
+            <span>{{ product.screenResolution }}</span>
+        </li>
+        <li class="configuration-item">
+            <span>Kích thước màn hình: </span>
+            <span>{{ product.screenSize }}</span>
+        </li>
+        <li class="configuration-item">
+            <span>Hệ điều hành: </span>
+            <span>{{ product.OS }}</span>
+        </li>
+        <li class="configuration-item">
+            <span>Chip xử lý (CPU): </span>
+            <span>{{ product.phoneCPU }}</span>
+        </li>
+        <li class="configuration-item">
+            <span>Bộ nhớ trong (ROM): </span>
+            <span>{{ product.ROM }}</span>
+        </li>
+        <li class="configuration-item">
+            <span>RAM: </span>
+            <span>{{ product.RAM }}</span>
+        </li>
+        <li class="configuration-item">
+            <span>Mạng di động: </span>
+            <span>{{ product.mobileNetwork }}</span>
+        </li>
+        <li class="configuration-item">
+            <span>Số khe sim: </span>
+            <span>{{ product.numberOfSims }}</span>
+        </li>
+        <li class="configuration-item">
+            <span>Thời lượng pin: </span>
+            <span>{{ product.batteryCapacity }} mAh</span>
+        </li>
+    </ul>
+</div>

@@ -14,10 +14,10 @@
     margin: 0 10px;
     cursor: pointer;
     font-size: 18px;
+    display: block;
 }
 
-.products-new__tab:hover,
-.products-new__tab.active {
+.products-new__tab:hover {
     color: var(--primary-color)
 }
 
