@@ -1,0 +1,31 @@
+.product-configuration {
+    width: 100%;
+    min-height: 710px;
+    border-radius: 8px;
+    border: 1px solid #e0e1e4;
+    margin-top: 40px;
+    padding: 15px;
+}
+
+.product-configuration h3 {
+    font-size: 18pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+.product-configuration .product-thumb {
+    width: 350px;
+    height: 350px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    margin-bottom: 30px;
+}
+
+.configuration-item {
+    font-size: 12pt;
+}
+
+.configuration-item span:first-child {
+    font-weight: bold;
+}
