@@ -21,19 +21,19 @@
                     <strike>{{ product.price|intcomma }}đ</strike>
                 {% endif %}
             </div>
-
+        </a>
+        <div class="product-overlay">
             <div class="product__btn-group">
-                <div class="btn product__btn product__addCart">
+                <div
+                    onClick="addProductToCard('{{ product.pk }}', '{{ csrf_token }}')"
+                    class="btn product__btn product__addCart">
                     <i class="fas fa-cart-plus"></i>
-                </div>
-                <div class="btn product__btn product__like">
-                    <i class="fas fa-heart"></i>
                 </div>
                 <div class="btn product__btn product__view">
                     <i class="fas fa-eye"></i>
                 </div>
             </div>
-        </a>
+        </div>
     </div>
 {% if isHome %}
 </div>

@@ -35,7 +35,7 @@ class Accessory(models.Model):
     id = models.CharField(primary_key=True, max_length=100, unique=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=500)
     brand = models.CharField(max_length=100, default='apple', choices=Brands)
-    category = models.IntegerField(max_length=1, default=1, choices=AccessoryCategory)
+    category = models.IntegerField(default=1, choices=AccessoryCategory)
     dayOfManufacture = models.DateField(default=datetime.date.today, blank=True, null=True)
     insurance = models.DateField(default=datetime.date.today, blank=True, null=True)
     thumbnail = models.ImageField(upload_to=create_phoneThumbnail_directory, default=None)

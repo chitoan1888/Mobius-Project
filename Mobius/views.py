@@ -1,25 +1,32 @@
-from re import search
-from unicodedata import name
-from django.shortcuts import render, redirect
-from django.http import HttpResponse
-from django.views.generic import TemplateView, ListView, DetailView
+from django.shortcuts import render
+from django.shortcuts import get_object_or_404
+from django.views.generic import TemplateView
 from django.db.models import Q
 from Phone.models import Phone
 from Blog.models import Blog
 from Accessory.models import Accessory
+from Cart.models import Cart, CartItem
+
 
 
 class HomeView(TemplateView):
     template_name = "./pages/home.html"
 
     def get(self, request):
-        phones = Phone.objects.all()
-        accessories = Accessory.objects.all()
-        blogs = Blog.objects.all()
+        phones = Phone.objects.order_by('dayOfManufacture')
+        accessories = Accessory.objects.order_by('dayOfManufacture')
+        blogs = Blog.objects.order_by('releaseDate')
+        cart = None
+        cartItems = None
+        if (request.user.is_authenticated):
+            cart = get_object_or_404(Cart, user=request.user)
+            cartItems = CartItem.objects.filter(cart=cart)
+
         return render(request, self.template_name, {
             'phones': phones,
             'accessories': accessories,
             'blogs': blogs,
+            'cartItems': cartItems,
         })
 
 def search(request):

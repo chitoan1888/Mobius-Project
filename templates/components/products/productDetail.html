@@ -1,0 +1,106 @@
+{% load static %}
+{% load humanize %}
+{% load mathfilters %}
+
+<div class="product-detail row">
+    <div class="col col-sm-4">
+        <div class="swiper product-galery-thumb">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide product-thumb-container">
+                    <div
+                        class="product-thumb"
+                        style="background-image: url('/media/{{ product.thumbnail }}')"
+                    ></div>
+                </div>
+                {% for image in productImages %}
+                    <div class="swiper-slide  product-thumb-container">
+                        <div
+                            class="product-thumb"
+                            style="background-image: url('/media/{{ image.images }}')">
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="swiper product-galery-slides">
+            <div class="swiper-wrapper">
+                <div
+                    class="swiper-slide product-image"
+                    style="background-image: url('/media/{{ product.thumbnail }}')"
+                ></div>
+                {% for image in productImages %}
+                    <div
+                        class="swiper-slide product-image"
+                        style="background-image: url('/media/{{ image.images }}')">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="col col-sm-8">
+        <h1 class="product-name text-gradient">{{ product.name }}</h1>
+        <div class="product-price">
+            {% if product.saleOff == 0 %}
+                <strong>{{ product.price|intcomma }}đ</strong>
+            {% elif product.saleOff > 0 %}
+                <strong>{{ 0|sub:product.price|mul:product.saleOff|add:product.price|intcomma }}đ</strong>
+                <strike>{{ product.price|intcomma }}đ</strike>
+            {% endif %}
+        </div>
+
+        <div class="product-rate">
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+        </div>
+
+        <div class="add-to-wishlist">
+            {{ product.sold }}
+            <span> sản phẩm đã bán</span>
+        </div>
+
+        <div class="product-btn-group">
+            <button class="buy-btn">
+                <i class="fas fa-cash-register"></i>
+                <span>MUA NGAY<span>
+            </button>
+            <button class="add-to-cart">
+                <i class="fas fa-cart-plus"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const productImagesSwiper = new Swiper(".product-galery-slides", {
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        spaceBetween: 12,
+        slidesPerView: 4,
+        watchSlidesProgress: true,
+      });
+
+      const productThumbSwiper = new Swiper(".product-galery-thumb", {
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        thumbs: {
+            swiper: productImagesSwiper,
+        },
+      });
+
+      document.querySelector('.product-galery-thumb').onmouseover = () => {
+        productImagesSwiper.autoplay.stop();
+        productThumbSwiper.autoplay.stop();
+      }
+
+      document.querySelector('.product-galery-thumb').onmouseout = () => {
+        productImagesSwiper.autoplay.start();
+        productThumbSwiper.autoplay.start();
+      }
+  </script>

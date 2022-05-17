@@ -4,7 +4,7 @@
   <div class="header-content">
     <div class="container d-flex align-items-center">
       <div class="header__logo">
-        <a href="./">
+        <a href="/">
           <img
             src="{% static 'images/mobius-logo.png' %}"
             alt="Mobius"
@@ -51,7 +51,7 @@
       {% endif %}
         <ul class="d-flex justify-content-center navbar__list">
           <li class="navbar__item">
-            <a class="navbar__link active" href="./">
+            <a class="navbar__link" href="/">
               <i class="fas fa-home"></i>
               <span>Trang chủ</span>
             </a>
@@ -112,9 +112,12 @@
         </div>
       {% endif %}
 
-      <div class="header__cart click-cursor">
-        <i class="fas fa-shopping-cart"></i>
-        <span class="cart__total-num">0</span>
+      <div class="header__cart-wrap">
+        <div class="header__cart click-cursor">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart__total-num">0</span>
+        </div>
+        {% include 'components/cart/cartHeader.html' %}
       </div>
     </div>
   </div>
