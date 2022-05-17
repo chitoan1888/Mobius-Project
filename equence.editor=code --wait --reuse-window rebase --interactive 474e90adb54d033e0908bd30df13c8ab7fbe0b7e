@@ -1,0 +1,214 @@
+[33m984c3ed[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m HEAD@{0}: rebase (abort): updating HEAD
+[33m5daca58[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{1}: rebase (start): checkout origin
+[33m984c3ed[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m HEAD@{2}: rebase (continue) (finish): returning to refs/heads/master
+[33m984c3ed[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m HEAD@{3}: rebase (continue): feat: add-to-cart
+[33m49a424c[m HEAD@{4}: rebase (continue): feat: product detail page
+[33mef636df[m HEAD@{5}: rebase (start): checkout ef636df3f73db6c90cd64a5436445fc1eaf33a8b
+[33m5daca58[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{6}: rebase (abort): updating HEAD
+[33m5daca58[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{7}: rebase (abort): updating HEAD
+[33m5daca58[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{8}: checkout: moving from master to master
+[33m5daca58[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{9}: rebase: checkout master
+[33m5daca58[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{10}: rebase: checkout master
+[33m5daca58[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{11}: rebase: checkout master
+[33m32cde38[m[33m ([m[1;31morigin/feat/frontend[m[33m, [m[1;32mfeat/frontend[m[33m)[m HEAD@{12}: checkout: moving from master to feat/frontend
+[33m5daca58[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{13}: commit (amend): feat: add-to-cart
+[33m7da74c0[m HEAD@{14}: checkout: moving from feat/frontend to master
+[33m32cde38[m[33m ([m[1;31morigin/feat/frontend[m[33m, [m[1;32mfeat/frontend[m[33m)[m HEAD@{15}: rebase (continue) (finish): returning to refs/heads/feat/frontend
+[33m32cde38[m[33m ([m[1;31morigin/feat/frontend[m[33m, [m[1;32mfeat/frontend[m[33m)[m HEAD@{16}: rebase: fast-forward
+[33m3e58770[m HEAD@{17}: rebase (start): checkout 3e58770c737e197c81399804fac6dbc425b08a51
+[33m5e1d735[m HEAD@{18}: commit (amend): Merge branch 'master' into feat/frontend
+[33mdd43adc[m HEAD@{19}: checkout: moving from master to feat/frontend
+[33m7da74c0[m HEAD@{20}: commit (amend): feat: add-to-cart
+[33mc7f076e[m HEAD@{21}: rebase (continue) (finish): returning to refs/heads/master
+[33mc7f076e[m HEAD@{22}: rebase (continue) (pick): feat: add-to-cart
+[33m5201a0a[m HEAD@{23}: rebase (continue): feat: product detail page
+[33m8eb2f83[m HEAD@{24}: rebase (start): checkout 8eb2f839b97b7b8c6d90b704701a879c3ecb94f3
+[33m106c6e7[m HEAD@{25}: merge feat/frontend: Merge made by the 'recursive' strategy.
+[33m8eb2f83[m HEAD@{26}: checkout: moving from feat/frontend to master
+[33mdd43adc[m HEAD@{27}: commit (merge): Merge branch 'master' into feat/frontend
+[33m32cde38[m[33m ([m[1;31morigin/feat/frontend[m[33m, [m[1;32mfeat/frontend[m[33m)[m HEAD@{28}: checkout: moving from master to feat/frontend
+[33m8eb2f83[m HEAD@{29}: checkout: moving from feat/frontend to master
+[33m32cde38[m[33m ([m[1;31morigin/feat/frontend[m[33m, [m[1;32mfeat/frontend[m[33m)[m HEAD@{30}: commit: feat: add-to-cart
+[33m3e58770[m HEAD@{31}: commit (amend): feat: product detail page
+[33m8eb2f83[m HEAD@{32}: rebase (finish): returning to refs/heads/feat/frontend
+[33m8eb2f83[m HEAD@{33}: rebase (start): checkout 474e90adb54d033e0908bd30df13c8ab7fbe0b7e
+[33mc007e70[m HEAD@{34}: checkout: moving from master to feat/frontend
+[33m8eb2f83[m HEAD@{35}: rebase: checkout master
+[33mc007e70[m HEAD@{36}: checkout: moving from master to feat/frontend
+[33m8eb2f83[m HEAD@{37}: rebase: checkout master
+[33mc007e70[m HEAD@{38}: commit (merge): Merge branch 'master' of https://github.com/chitoan1888/Mobius-Project into feat/frontend
+[33m87cac7d[m HEAD@{39}: checkout: moving from master to feat/frontend
+[33m8eb2f83[m HEAD@{40}: reset: moving to 8eb2f839b97b7b8c6d90b704701a879c3ecb94f3
+[33m622700e[m HEAD@{41}: commit: ok
+[33m8eb2f83[m HEAD@{42}: commit (amend): feat: product detail page
+[33m87cac7d[m HEAD@{43}: rebase: checkout master
+[33m87cac7d[m HEAD@{44}: checkout: moving from master to feat/frontend
+[33m87cac7d[m HEAD@{45}: rebase (finish): returning to refs/heads/master
+[33m87cac7d[m HEAD@{46}: rebase (start): checkout 633c23741dbae2f19181cde837196739a9816e4c
+[33m634bffa[m HEAD@{47}: checkout: moving from feat/frontend to master
+[33m87cac7d[m HEAD@{48}: rebase (finish): returning to refs/heads/feat/frontend
+[33m87cac7d[m HEAD@{49}: rebase (start): checkout 633c23741dbae2f19181cde837196739a9816e4c
+[33m32cfdbe[m HEAD@{50}: commit (merge): Merge branch 'feat/frontend' of https://github.com/chitoan1888/Mobius-Project into feat/frontend
+[33mce612cd[m HEAD@{51}: rebase (finish): returning to refs/heads/feat/frontend
+[33mce612cd[m HEAD@{52}: rebase (pick): feat: product detail page
+[33m422ee3f[m HEAD@{53}: rebase (start): checkout 633c23741dbae2f19181cde837196739a9816e4c
+[33mb62d469[m HEAD@{54}: rebase (skip) (finish): returning to refs/heads/feat/frontend
+[33mb62d469[m HEAD@{55}: rebase (skip) (pick): feat: product detail page
+[33m7d02e3c[m HEAD@{56}: rebase (start): checkout origin
+[33m634bffa[m HEAD@{57}: commit (merge): Merge branch 'feat/frontend'
+[33m7d02e3c[m HEAD@{58}: checkout: moving from feat/frontend to master
+[33m87cac7d[m HEAD@{59}: commit: feat: product detail page
+[33mef636df[m HEAD@{60}: reset: moving to ef636df3f73db6c90cd64a5436445fc1eaf33a8b
+[33m344ac36[m HEAD@{61}: commit: fix: change gitignore
+[33mef636df[m HEAD@{62}: commit (amend): feat: login on slidebar mobile
+[33m7874ba4[m HEAD@{63}: commit (amend): feat: login on slidebar mobile
+[33m422ee3f[m HEAD@{64}: rebase (finish): returning to refs/heads/feat/frontend
+[33m422ee3f[m HEAD@{65}: rebase (start): checkout 633c23741dbae2f19181cde837196739a9816e4c
+[33mb8443c9[m HEAD@{66}: commit (merge): Merge branch 'feat/frontend' of https://github.com/chitoan1888/Mobius-Project into feat/frontend
+[33mced765a[m HEAD@{67}: rebase (continue) (finish): returning to refs/heads/feat/frontend
+[33mced765a[m HEAD@{68}: rebase (continue): feat: login on slidebar mobile
+[33m474e90a[m HEAD@{69}: rebase (start): checkout 633c23741dbae2f19181cde837196739a9816e4c
+[33m4b22a16[m HEAD@{70}: rebase (abort): updating HEAD
+[33mf02851c[m HEAD@{71}: rebase (pick): fix: minor bugs UI
+[33m059b1ae[m HEAD@{72}: rebase (start): checkout 059b1aedf78aa7cc01963e5ea13433f8fb2a3ebc
+[33m4b22a16[m HEAD@{73}: rebase (continue) (finish): returning to refs/heads/feat/frontend
+[33m4b22a16[m HEAD@{74}: rebase (continue): feat: login on slidebar mobile
+[33m7d02e3c[m HEAD@{75}: rebase (start): checkout origin
+[33m7d02e3c[m HEAD@{76}: checkout: moving from feat/frontend to master
+[33m62bea9a[m HEAD@{77}: commit (amend): feat: login on slidebar mobile
+[33m9c1ca88[m HEAD@{78}: rebase (finish): returning to refs/heads/feat/frontend
+[33m9c1ca88[m HEAD@{79}: rebase (pick): feat: login on slidebar mobile
+[33m7500c7e[m HEAD@{80}: rebase (fixup): fix: minor bugs UI
+[33m059b1ae[m HEAD@{81}: rebase (start): checkout 633c23741dbae2f19181cde837196739a9816e4c
+[33me63171b[m HEAD@{82}: rebase (continue) (finish): returning to refs/heads/feat/frontend
+[33me63171b[m HEAD@{83}: rebase (start): checkout origin
+[33m7d02e3c[m HEAD@{84}: pull origin feat/frontend: Merge made by the 'recursive' strategy.
+[33mcb95f82[m HEAD@{85}: checkout: moving from feat/frontend to master
+[33m422ee3f[m HEAD@{86}: rebase (finish): returning to refs/heads/feat/frontend
+[33m422ee3f[m HEAD@{87}: rebase (pick): feat: login on slidebar mobile
+[33m474e90a[m HEAD@{88}: rebase (squash): fix: minor bugs UI
+[33m059b1ae[m HEAD@{89}: rebase (start): checkout 633c23741dbae2f19181cde837196739a9816e4c
+[33me63171b[m HEAD@{90}: checkout: moving from feat/frontend to feat/frontend
+[33me63171b[m HEAD@{91}: rebase (finish): returning to refs/heads/feat/frontend
+[33me63171b[m HEAD@{92}: rebase (start): checkout origin
+[33mcb95f82[m HEAD@{93}: pull origin feat/frontend: Fast-forward
+[33m059b1ae[m HEAD@{94}: checkout: moving from feat/frontend to master
+[33mcb95f82[m HEAD@{95}: rebase (finish): returning to refs/heads/feat/frontend
+[33mcb95f82[m HEAD@{96}: rebase (pick): feat: login on slidebar mobile
+[33m059b1ae[m HEAD@{97}: rebase (start): checkout 059b1aedf78aa7cc01963e5ea13433f8fb2a3ebc
+[33m6f61294[m HEAD@{98}: pull origin master: Merge made by the 'recursive' strategy.
+[33m2238726[m HEAD@{99}: rebase (finish): returning to refs/heads/feat/frontend
+[33m2238726[m HEAD@{100}: rebase (squash): feat: login on slidebar mobile
+[33m0e39b4c[m HEAD@{101}: rebase (start): checkout 633c23741dbae2f19181cde837196739a9816e4c
+[33m5ba1c37[m HEAD@{102}: reset: moving to HEAD@{16}
+[33m8065f98[m HEAD@{103}: checkout: moving from master to feat/frontend
+[33m059b1ae[m HEAD@{104}: checkout: moving from feat/frontend to master
+[33m8065f98[m HEAD@{105}: rebase (finish): returning to refs/heads/feat/frontend
+[33m8065f98[m HEAD@{106}: rebase (squash): feat: login on slidebar mobile
+[33m39bb6b4[m HEAD@{107}: rebase (start): checkout 059b1aedf78aa7cc01963e5ea13433f8fb2a3ebc
+[33m9dec4f3[m HEAD@{108}: rebase (continue) (finish): returning to refs/heads/feat/frontend
+[33m9dec4f3[m HEAD@{109}: rebase (continue): feat: login on slidebar mobile
+[33m39bb6b4[m HEAD@{110}: rebase (pick): fix: minor bugs UI
+[33m059b1ae[m HEAD@{111}: rebase (start): checkout 059b1aedf78aa7cc01963e5ea13433f8fb2a3ebc
+[33m3f7271b[m HEAD@{112}: merge origin/feat/frontend: Merge made by the 'recursive' strategy.
+[33m5ba1c37[m HEAD@{113}: checkout: moving from master to feat/frontend
+[33m059b1ae[m HEAD@{114}: checkout: moving from origin/feat/frontend to master
+[33mee8621e[m[33m ([m[1;32morigin/feat/frontend[m[33m)[m HEAD@{115}: commit (merge): Merge branch 'master' into origin/feat/frontend
+[33m5ba1c37[m HEAD@{116}: checkout: moving from feat/frontend to origin/feat/frontend
+[33m5ba1c37[m HEAD@{117}: checkout: moving from master to feat/frontend
+[33m059b1ae[m HEAD@{118}: checkout: moving from feat/frontend to master
+[33m5ba1c37[m HEAD@{119}: commit: feat: login on slidebar mobile
+[33m0e39b4c[m HEAD@{120}: commit (amend): fix: minor bugs UI
+[33m059b1ae[m HEAD@{121}: checkout: moving from master to feat/frontend
+[33m059b1ae[m HEAD@{122}: rebase (finish): returning to refs/heads/master
+[33m059b1ae[m HEAD@{123}: rebase (pick): fix: minor bugs UI
+[33m633c237[m HEAD@{124}: rebase (start): checkout 602093273b17a7e8749c57aaf1f20faf6a98560a
+[33m883e5a2[m HEAD@{125}: pull origin master: Merge made by the 'recursive' strategy.
+[33m949bbd3[m HEAD@{126}: commit: fix: minor bugs UI
+[33mb872931[m HEAD@{127}: pull origin master: Fast-forward
+[33m8c36e17[m HEAD@{128}: checkout: moving from feat/frontend to master
+[33m923f5b1[m HEAD@{129}: commit: feat: auth page
+[33m8c36e17[m HEAD@{130}: pull origin master: Fast-forward
+[33med1dfab[m HEAD@{131}: reset: moving to ed1dfabb9b1e4932f87be3ba24aafd270367ba15
+[33m8c36e17[m HEAD@{132}: pull origin master: Fast-forward
+[33ma55b1a5[m HEAD@{133}: checkout: moving from master to feat/frontend
+[33m8c36e17[m HEAD@{134}: commit: fix: update gitignore
+[33mb17816f[m HEAD@{135}: pull origin master: Merge made by the 'recursive' strategy.
+[33ma55b1a5[m HEAD@{136}: checkout: moving from feat/frontend to master
+[33ma55b1a5[m HEAD@{137}: checkout: moving from master to feat/frontend
+[33ma55b1a5[m HEAD@{138}: commit: feat: home page UI
+[33mf71a1be[m HEAD@{139}: rebase (finish): returning to refs/heads/master
+[33mf71a1be[m HEAD@{140}: rebase (start): checkout origin
+[33m6b6e876[m HEAD@{141}: commit (merge): Merge branch 'master' of https://github.com/chitoan1888/Mobius-Project into feat/front-end
+[33m7514f34[m HEAD@{142}: checkout: moving from master to feat/front-end
+[33m7514f34[m HEAD@{143}: commit: feat: add blog and accessory models
+[33m5e2fcc4[m HEAD@{144}: rebase: checkout master
+[33m0c051df[m HEAD@{145}: commit: q
+[33m5e2fcc4[m HEAD@{146}: checkout: moving from master to feat/build-UI
+[33m5e2fcc4[m HEAD@{147}: rebase (continue) (finish): returning to refs/heads/master
+[33m5e2fcc4[m HEAD@{148}: rebase: fast-forward
+[33m1c70a0c[m HEAD@{149}: rebase (start): checkout c8856af1ccd89eda5c693799024e600dbab34004
+[33m34ddd6d[m HEAD@{150}: pull origin master: Fast-forward
+[33md1c544c[m HEAD@{151}: checkout: moving from master to master
+[33md1c544c[m HEAD@{152}: pull origin feat/build-UI: Fast-forward
+[33mc8856af[m[33m ([m[1;31mheroku/master[m[33m)[m HEAD@{153}: checkout: moving from feat/build-UI to master
+[33m5e2fcc4[m HEAD@{154}: rebase (finish): returning to refs/heads/feat/build-UI
+[33m5e2fcc4[m HEAD@{155}: rebase (pick): feat: add library for product description field
+[33m1c70a0c[m HEAD@{156}: rebase (squash): feat: homepage UI
+[33m1bd5208[m HEAD@{157}: rebase (start): checkout c8856af1ccd89eda5c693799024e600dbab34004
+[33m0dbc6db[m HEAD@{158}: commit (merge): Merge branch 'master' of https://github.com/chitoan1888/Mobius-Project into feat/build-UI
+[33m7ae692f[m HEAD@{159}: commit: feat: add library for product description field
+[33ma46073e[m HEAD@{160}: commit (amend): UI: item list
+[33m14253f0[m HEAD@{161}: commit: UI: item list
+[33m02ff5bd[m HEAD@{162}: commit: UI: add products-list
+[33m0a8dd44[m HEAD@{163}: commit: feat: update phone model
+[33mc8382ab[m HEAD@{164}: commit: UI: brand swipper
+[33m9582fc6[m HEAD@{165}: commit (amend): UI: homepage banner
+[33m40dfead[m HEAD@{166}: commit (amend): UI: homepage banner
+[33mb22eacc[m HEAD@{167}: commit: UI: homepage banner
+[33md89f89f[m HEAD@{168}: commit: UI: responsive header
+[33mc8856af[m[33m ([m[1;31mheroku/master[m[33m)[m HEAD@{169}: reset: moving to c8856af1ccd89eda5c693799024e600dbab34004
+[33m1b842df[m HEAD@{170}: reset: moving to 1b842df2790f21571e003a353d40a78562046126
+[33m5197f99[m HEAD@{171}: rebase (abort): updating HEAD
+[33m1b842df[m HEAD@{172}: reset: moving to 1b842df2790f21571e003a353d40a78562046126
+[33m2b4cfd3[m HEAD@{173}: commit: feat: change django version
+[33mc8856af[m[33m ([m[1;31mheroku/master[m[33m)[m HEAD@{174}: rebase (start): checkout 409591623bc674ed8e860ab4361f9e1a173a8adb
+[33m5197f99[m HEAD@{175}: commit: feat: change django version
+[33m1b842df[m HEAD@{176}: commit: Deploy to heroku
+[33mc8856af[m[33m ([m[1;31mheroku/master[m[33m)[m HEAD@{177}: reset: moving to c8856af1ccd89eda5c693799024e600dbab34004
+[33md097b9e[m HEAD@{178}: rebase (finish): returning to refs/heads/feat/build-UI
+[33md097b9e[m HEAD@{179}: rebase (fixup): Automatic configuration with django-heroku
+[33md32b22d[m HEAD@{180}: rebase (start): checkout a2f8e22004f0f07d1fd60a8b62913bf02ed44300
+[33mdca5217[m HEAD@{181}: commit: Automatic configuration with django-heroku
+[33md32b22d[m HEAD@{182}: commit: Automatic configuration with django-heroku
+[33ma2f8e22[m HEAD@{183}: commit: feat: setting command to deploy on heroku
+[33mc8856af[m[33m ([m[1;31mheroku/master[m[33m)[m HEAD@{184}: checkout: moving from master to feat/build-UI
+[33mc8856af[m[33m ([m[1;31mheroku/master[m[33m)[m HEAD@{185}: rebase (skip) (finish): returning to refs/heads/master
+[33mc8856af[m[33m ([m[1;31mheroku/master[m[33m)[m HEAD@{186}: rebase (start): checkout origin
+[33mb3d811e[m HEAD@{187}: checkout: moving from master to feat/build-UI
+[33md2ebac5[m HEAD@{188}: rebase (finish): returning to refs/heads/master
+[33md2ebac5[m HEAD@{189}: rebase (pick): fix: clear all cache files
+[33me7679e8[m HEAD@{190}: rebase (fixup): feat: set environment variable and gitignore
+[33m4095916[m HEAD@{191}: rebase (start): checkout b3d811e97420ad1e1153d9e3c103f66c93bdf18a
+[33m76f719c[m HEAD@{192}: rebase (finish): returning to refs/heads/master
+[33m76f719c[m HEAD@{193}: rebase (start): checkout 409591623bc674ed8e860ab4361f9e1a173a8adb
+[33m76f719c[m HEAD@{194}: commit: update gitignore
+[33mc8856af[m[33m ([m[1;31mheroku/master[m[33m)[m HEAD@{195}: commit: fix: clear all cache files
+[33m4095916[m HEAD@{196}: commit: feat: set environment variable and gitignore
+[33mb3d811e[m HEAD@{197}: rebase (finish): returning to refs/heads/master
+[33mb3d811e[m HEAD@{198}: rebase (start): checkout c20bd2d9a76b5665f4eee36f9b619dfef18203e4
+[33m84b9527[m HEAD@{199}: commit (merge): Merge branch 'feat/build-UI'
+[33mb1fcef8[m HEAD@{200}: checkout: moving from feat/build-UI to master
+[33mb3d811e[m HEAD@{201}: rebase (continue) (finish): returning to refs/heads/feat/build-UI
+[33mb3d811e[m HEAD@{202}: rebase (continue) (squash): UI: header
+[33m894f6c4[m HEAD@{203}: rebase (continue) (pick): temp commit
+[33m0caa4a4[m HEAD@{204}: rebase (continue) (fixup): update database and search function
+[33mb30deb1[m HEAD@{205}: rebase (continue) (pick): update database and search function
+[33m9522954[m HEAD@{206}: rebase (continue) (squash): Triet test commit
+[33md86de72[m HEAD@{207}: rebase (continue): Triet test commit
+[33m19214c0[m HEAD@{208}: rebase (squash): # This is a combination of 2 commits.
+[33m1cad2a8[m HEAD@{209}: rebase (start): checkout c20bd2d9a76b5665f4eee36f9b619dfef18203e4
+[33m5361f22[m HEAD@{210}: commit: UI: header
+[33mb1fcef8[m HEAD@{211}: checkout: moving from master to feat/build-UI
+[33mb1fcef8[m HEAD@{212}: commit: temp commit
+[33m0a498e4[m HEAD@{213}: clone: from https://github.com/chitoan1888/Mobius-Project

@@ -41,5 +41,5 @@ def updatePhonetoCart(request):
         cartItem.update(
             quantity = cartItem.first().quantity + 1,
         )
-        return JsonResponse({"result": "success"}, status=400)
+        return JsonResponse({"result": "success"}, status=200)
     return JsonResponse({"result": "failed"}, status=400)
