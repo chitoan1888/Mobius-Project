@@ -14,5 +14,6 @@ urlpatterns = [
     path('search/', search, name='search_results'),
     path('', include('Phone.urls')),
     path('', include('User.urls')),
+    path('', include('Cart.urls')),
     # path('', include('Blogs.urls')),
 ]

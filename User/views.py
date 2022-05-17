@@ -2,18 +2,17 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from .forms import NewUserForm
+from Cart.models import Cart
 from django.contrib import messages
 
 
 def register_request(request):
 	if request.method == "POST":
 		form = NewUserForm(request.POST)
-		print(request.POST)
-		print(form)
-		print(form.is_valid())
 		if form.is_valid():
 			user = form.save()
 			login(request, user)
+			Cart.objects.create(user=user)
 			messages.success(request, "Registration successful." )
 			return redirect("login")
 		messages.error(request, "Unsuccessful registration. Invalid information.")
