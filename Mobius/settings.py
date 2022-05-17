@@ -61,6 +61,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'Mobius.noadmin.NoAdmin',
 ]
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
@@ -168,3 +170,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static','media')
 FILEBROWSER_MEDIA_URL = getattr(settings, "FILEBROWSER_MEDIA_URL", settings.MEDIA_URL)
 FILEBROWSER_MEDIA_ROOT = getattr(settings, "FILEBROWSER_MEDIA_ROOT", settings.MEDIA_ROOT)
 FILEBROWSER_DIRECTORY = getattr(settings, "FILEBROWSER_DIRECTORY", 'uploads/')
+CSRF_TRUSTED_ORIGINS = ['https://99e7f28ec9494edcbb53597e0d6d1763-1cd60300-vm-80.vlab2.uit.edu.vn']
