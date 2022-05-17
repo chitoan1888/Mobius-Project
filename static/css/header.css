@@ -91,6 +91,7 @@
   right: 0;
   z-index: -1;
   opacity: 0;
+  visibility: hidden;
   transform: translateY(-25%);
   transition: all 0.3s;
   padding: 10px 23px;
@@ -109,6 +110,7 @@
 .header__user-menu:hover .header__user-menu-list {
   opacity: 1;
   z-index: 1;
+  visibility: visible;
   transform: translateY(0);
   transition: all 0.3s;
 }
@@ -272,6 +274,13 @@
 }
 
 /* Cart */
+.header__cart-wrap {
+  position: relative;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+}
+
 .header__cart {
   width: 48px;
   height: 48px;
@@ -283,7 +292,7 @@
   position: relative;
 }
 
-.header__cart:hover {
+.header__cart-wrap:hover .header__cart {
   background-image: var(--gradient-color);
   color: #fff;
   border-color: #fff;

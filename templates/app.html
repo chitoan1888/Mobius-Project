@@ -41,6 +41,11 @@
     />
     <link
       rel="stylesheet"
+      href="{% static 'css/cart/cartHeader.css' %}"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
       href="{% static 'css/footer.css' %}"
       type="text/css"
     />
@@ -55,7 +60,10 @@
     <div class="app">
       {% include 'components/header.html' %}
 
-      <div class="content">{% block content %}{% endblock %}</div>
+      <div class="content">
+        {% block content %}{% endblock %}
+        {{ cartItems.phone.name }}
+      </div>
 
       {% include 'components/footer.html' %}
       <div class="overlay"></div>
@@ -71,7 +79,11 @@
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
+    <script type="text/javascript">
+      var cartUrl = "{% url 'get_cart' %}";
+    </script>
     <script src="{% static 'js/header.js' %}"></script>
+    <script src="{% static 'js/cart.js' %}"></script>
     {% block scripts %}{% endblock %}
   </body>
 </html>
