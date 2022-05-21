@@ -14,7 +14,7 @@ def register_request(request):
 			login(request, user)
 			Cart.objects.create(user=user)
 			messages.success(request, "Registration successful." )
-			return redirect("login")
+			return redirect("home_view")
 		messages.error(request, "Unsuccessful registration. Invalid information.")
 	form = NewUserForm()
 	return render (request=request, template_name="pages/register.html", context={"register_form":form})
@@ -31,7 +31,7 @@ def login_request(request):
 			if user is not None:
 				login(request, user)
 				messages.info(request, f"You are now logged in as {username}.")
-				return redirect("./")
+				return redirect("home_view")
 			else:
 				errorMess = "Tên đăng nhập hoặc mật khẩu không tồn tại"
 		else:
@@ -43,4 +43,4 @@ def login_request(request):
 def logout_request(request):
 	logout(request)
 	messages.info(request, "You have successfully logged out.")
-	return redirect("./")
+	return redirect("home_view")

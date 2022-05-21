@@ -26,7 +26,7 @@ const addProductToCard = (productId) => {
     if($(`.${productId}`).length === 1) {
         $.ajax({
             type: 'POST',
-            url: `update/ajax/cart/`,
+            url: `/update/ajax/cart/`,
             dataType: "json",
             data: {
                 "phoneId": productId,
@@ -43,7 +43,7 @@ const addProductToCard = (productId) => {
     } else {
         $.ajax({
             type: 'POST',
-            url: `post/ajax/cart/`,
+            url: `/post/ajax/cart/`,
             dataType: "json",
             data: {
                 "phoneId": productId,

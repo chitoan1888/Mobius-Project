@@ -49,7 +49,7 @@ window.onload = () => {
 const getUserCartData = () => {
     $.ajax({
         type: 'GET',
-        url: cartUrl,
+        url: '/get/ajax/cart/',
         data: null,
         success: function (response) {
             if(!response["valid"]){
@@ -80,7 +80,7 @@ const createCartHeaderItem = (cartItems) => {
 
                     const a = document.createElement("a");
                     a.className="cart-item__link";
-                    a.href = `dien-thoai/${phoneData.fields.name.split(" ").join("-")}`
+                    a.href = `/dien-thoai/${phoneData.fields.name.split(" ").join("-")}`
                     li.append(a);
 
                     const img = document.createElement("img");
