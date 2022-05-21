@@ -5,7 +5,7 @@
 <div class="swiper-slide">
 {% endif %}
     <div class="product__wrapper">
-        <a href="/dien-thoai/{{ product.name.split|join:"-" }}" class="product__item">
+        <div class="product__item">
             <div
                 class="product__thumbnail"
                 style="
@@ -21,7 +21,7 @@
                     <strike>{{ product.price|intcomma }}đ</strike>
                 {% endif %}
             </div>
-        </a>
+        </div>
         <div class="product-overlay">
             <div class="product__btn-group">
                 <div
@@ -29,9 +29,12 @@
                     class="btn product__btn product__addCart">
                     <i class="fas fa-cart-plus"></i>
                 </div>
-                <div class="btn product__btn product__view">
+                <a
+                    href="{% url  'phoneView' phoneName=product.name.split|join:"-" %}"
+                    class="btn product__btn product__view"
+                >
                     <i class="fas fa-eye"></i>
-                </div>
+                </a>
             </div>
         </div>
     </div>
