@@ -16,7 +16,6 @@ def create_phoneThumbnail_directory(instance, filename):
 Brands = (
     ("apple", "Apple"),
     ("asus", "Asus"),
-    ("htc", "HTC"),
     ("samsung", "Samsung"),
     ("huawei", "Huawei"),
     ("lg", "LG"),
