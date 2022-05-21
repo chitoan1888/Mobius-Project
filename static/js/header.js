@@ -101,7 +101,7 @@ const createCartHeaderItem = (cartItems) => {
 
                     const span1 = document.createElement("span");
                     span1.className = "cart-item__price";
-                    span1.innerText = phoneData.fields.price;
+                    span1.innerText = new Intl.NumberFormat().format(parseInt(phoneData.fields.price, 10)) + "đ";
                     div2.append(span1);
 
                     const span2 = document.createElement("span");
