@@ -34,7 +34,7 @@
               </a>
             </li>
             <li class="logout">
-              <a href="./logout">
+              <a href="{% url 'logout' %}">
                 <i class="fas fa-sign-out-alt"></i>
                 <span>Đăng xuất</span>
               </a>
@@ -43,7 +43,7 @@
         </div>
       {% else %}
         <div class="navbar__mobile-login">
-          <a class="navbar__link" href="./login">
+          <a class="navbar__link" href="{% url 'login' %}">
             <i class="fas fa-user" style="font-size: 18px"></i>
             <span>Đăng nhập<span>
           </a>
@@ -96,7 +96,7 @@
               </a>
             </li>
             <li class="logout">
-              <a href="./logout">
+              <a href="{% url 'logout' %}">
                 <i class="fas fa-sign-out-alt"></i>
                 Đăng xuất
               </a>
@@ -105,7 +105,7 @@
         </div>
       {% else %}
         <div class="header__login click-cursor">
-          <a href="/login" class="login__link">
+          <a href="{% url 'login' %}" class="login__link">
             <i class="fas fa-user" style="font-size: 18px"></i>
             Đăng nhập
           </a>
@@ -123,7 +123,7 @@
   </div>
 
   <div class="header__search-bar-wrap">
-    <form action="search/" class="header__search-bar container"  method="GET" value="{{request.GET.q}}">
+    <form action="{% url 'search_results' %}" class="header__search-bar container"  method="GET" value="{{request.GET.q}}">
       <input
         type="text"
         name="q"
