@@ -13,7 +13,7 @@
         <div class="auth-logo">
             <a
                 class="auth-home-link"
-                href="./"
+                href="{% url 'home_view' %}"
             >
                 <img class="white-logo" src="{% static 'images/mobius-logo-white.png' %}" />
             </a>
@@ -76,7 +76,7 @@
                     </button>
                 </div>
             </form>
-            <p class="auth-text">Bạn chưa có tài khoản?? Hãy đăng ký <a href="/dang-ki">tại đây</a> để tiện lợi hơn khi đặt hàng tại Mobius!</p>
+            <p class="auth-text">Bạn chưa có tài khoản?? Hãy đăng ký <a href="{% url 'register' %}">tại đây</a> để tiện lợi hơn khi đặt hàng tại Mobius!</p>
         </div>
     </div>
 {% endblock %}
