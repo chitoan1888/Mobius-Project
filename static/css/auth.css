@@ -3,13 +3,12 @@
   background-image: var(--gradient-color);
   opacity: 1;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 
 .auth-logo {
-  position: absolute;
-  top: 100px;
+  padding: 50px 0;
 }
 
 .auth-home-link {
