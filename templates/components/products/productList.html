@@ -42,7 +42,7 @@
     <div class="swiper product-new__list {{ filterOn }}">
         <div class="swiper-wrapper">
           {% for product in products %}
-              {% include 'components/products/productItem.html' with product=product style="swiper" %}
+              {% include 'components/products/productItem.html' with filterOn=filterOn product=product style="swiper" %}
           {% endfor %}
         </div>
     </div>

@@ -29,10 +29,17 @@
                     class="btn product__btn product__addCart">
                     <i class="fas fa-cart-plus"></i>
                 </div>
+                {% if filterOn == 'phone' %}
                 <a
                     href="{% url  'phoneView' phoneName=product.name.split|join:"-" %}"
                     class="btn product__btn product__view"
                 >
+                {% else %}
+                <a
+                    href="{% url  'accessoryView' accessoryName=product.name.split|join:"-" %}"
+                    class="btn product__btn product__view"
+                >
+                {% endif %}
                     <i class="fas fa-eye"></i>
                 </a>
             </div>
