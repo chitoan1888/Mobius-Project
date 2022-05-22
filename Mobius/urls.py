@@ -13,6 +13,7 @@ urlpatterns = [
     path('', HomeView.as_view(), name='home_view'),
     path('tim-kiem/', search, name='search_results'),
     path('', include('Phone.urls')),
+    path('', include('Accessory.urls')),
     path('', include('User.urls')),
     path('', include('Cart.urls')),
     # path('', include('Blogs.urls')),
