@@ -1,0 +1,110 @@
+<div class="container product-filter">
+    <div class="filter-heading">
+        <span>{{ products.count  }} sản phẩm</span>
+        <span>Lọc sản phẩm: </span>
+    </div>
+    <ul class="filter__attribute-list">
+        <li class="filter__attribute">
+            <div class="attribute-wrap">
+                <span>Thương hiệu</span>
+                <i class="fas fa-angle-down"></i>
+
+                <ul class="row gy-2 attribute-list">
+                    <li class="col-4">
+                        <div onClick="filter('apple')">
+                            Apple
+                        </div>
+                    </li>
+                    <li class="col-4">
+                        <div onclick="filter('samsung')">
+                            Samsung
+                        </div>
+                    </li>
+                    <li class="col-4">
+                        <div onclick="filter('huawei')">
+                            Huawei
+                        </div>
+                    </li>
+                    <li class="col-4">
+                        <div onclick="filter('lg')">
+                            LG
+                        </div>
+                    </li>
+                    <li class="col-4">
+                        <div onclick="filter('vivo')">
+                            Vivo
+                        </div>
+                    </li>
+                    <li class="col-4">
+                        <div onclick="filter('xiaomi')">
+                            Xiaomi
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="filter__attribute">
+            <div class="attribute-wrap">
+                <span>Giá</span>
+                <i class="fas fa-angle-down"></i>
+
+                <ul class="row gy-2 attribute-list">
+                    <li class="col-4">
+                        <div onclick='filter(null, {minPrice:2000000,maxPrice:4000000})'>
+                            Từ 2 - 4 triệu
+                        </div>
+                    </li>
+                    <li class="col-4">
+                        <div onclick='filter(null, {minPrice:4000000,maxPrice:7000000})'>
+                            Từ 4 - 7 triệu
+                        </div>
+                    </li>
+                    <li class="col-4">
+                        <div onclick='filter(null, {minPrice:7000000,maxPrice:13000000})'>
+                            Từ 7 - 13 triệu
+                        </div>
+                    </li>
+                    <li class="col-4">
+                        <div onclick='filter(null, {minPrice:13000000,maxPrice:20000000})'>
+                            Từ 13 - 20 triệu
+                        </div>
+                    </li>
+                    <li class="col-4">
+                        <div onclick='filter(null, {minPrice:20000000,maxPrice:10000000000})'>
+                            Trên 20 triệu
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="filter__attribute">
+            <div class="attribute-wrap">
+                <span>Sắp xếp</span>
+                <i class="fas fa-angle-down"></i>
+
+                <ul class="row gy-2 attribute-list">
+                    <li class="col-4">
+                        <div onclick='filter(null, null, 1)'>
+                            Giá thấp đến cao
+                        </div>
+                    </li>
+                    <li class="col-4">
+                        <div onclick='filter(null, null, 2)'>
+                            Giá cao đến thấp
+                        </div>
+                    </li>
+                    <li class="col-4">
+                        <div onclick='filter(null, null, 3)'>
+                            Ngày ra mắt
+                        </div>
+                    </li>
+                    <li class="col-4">
+                        <div onclick='filter(null, null, 4)'>
+                            Bán nhiều nhất
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>

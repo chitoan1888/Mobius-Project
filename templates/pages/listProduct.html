@@ -1,0 +1,19 @@
+{% extends '../app.html' %}
+{% load static %}
+
+{% block title %}Điện thoại - Mobius{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/products/productList.css' %}" type="text/css" />
+<link rel="stylesheet" href="{% static 'css/products/productItem.css' %}" type="text/css" />
+<link rel="stylesheet" href="{% static 'css/products/filter.css' %}" type="text/css" />
+{% endblock %}
+
+{% block content %}
+    {% include 'components/products/filter.html' with filterOn="phone" products=products %}
+    {% include 'components/products/productList.html' with filterOn="phone" products=products %}
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/productsFilter.js' %}"></script>
+{% endblock %}

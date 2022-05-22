@@ -30,19 +30,21 @@ class HomeView(TemplateView):
         })
 
 def search(request):
+    template_name = './pages/listProduct.html'
+
     if request.method == 'GET':
         query= request.GET.get('q')
         submitbutton= request.GET.get('submit')
         if query is not None:
             lookups= Q(name__icontains=query) | Q(price__icontains=query) | Q(brand__icontains=query) | Q(description__icontains=query) | Q(keywordsSearch__icontains=query)
             results= Phone.objects.filter(lookups).distinct()
-            context={'results': results,
+            context={'products': results,
                      'submitbutton': submitbutton}
-            return render(request, 'components/search_results.html', context)
+            return render(request, template_name, context)
         else:
-            return render(request, 'components/search_results.html')
+            return render(request, template_name)
     else:
-        return render(request, 'components/search_results.html')
+        return render(request, template_name)
 
 
 

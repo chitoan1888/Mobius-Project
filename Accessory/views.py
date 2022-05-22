@@ -1,6 +1,6 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render
-from .models import Phone, PhoneImage
+from .models import Accessory, AccessoryImage
 from django.shortcuts import get_object_or_404
 from django.http import JsonResponse
 from django.core import serializers
@@ -11,20 +11,20 @@ import json
 class ProductView(TemplateView):
     template_name = "./pages/product.html"
 
-    def get(self, request, phoneName):
-        _phoneName = " ".join(phoneName.split("-"))
-        phone = get_object_or_404(Phone, name= _phoneName)
-        phoneImages = PhoneImage.objects.filter(phone=phone)
+    def get(self, request, accessoryName):
+        _accessoryName = " ".join(accessoryName.split("-"))
+        accessory = get_object_or_404(Accessory, name= _accessoryName)
+        accessoryImages = AccessoryImage.objects.filter(accessory=accessory)
         return render(request, self.template_name, {
-            'product': phone,
-            'productImages': phoneImages
+            'product': accessory,
+            'productImages': accessoryImages
         })
 
-class ListPhone(TemplateView):
+class ListAccessory(TemplateView):
     template_name = "./pages/listProduct.html"
 
     def get(self, request):
-        phone = Phone.objects.all()
+        accessory = Accessory.objects.all()
         brand = request.GET.get('brand')
         price = None
 
@@ -36,39 +36,39 @@ class ListPhone(TemplateView):
 
 
         if (brand != None):
-            phone = phone.filter(brand=brand).order_by("dayOfManufacture")
+            accessory = accessory.filter(brand=brand).order_by("dayOfManufacture")
 
 
         if (price != None):
-            phone = phone.filter(price__gte=minPrice, price__lte=maxPrice).order_by("price")
+            accessory = accessory.filter(price__gte=minPrice, price__lte=maxPrice).order_by("price")
 
         # order
         if (request.GET.get('order')):
             order = int(request.GET.get('order'))
             match order:
                 case 1:
-                    phone = phone.order_by("price")
+                    accessory = accessory.order_by("price")
                 case 2:
-                    phone = phone.order_by("-price")
+                    accessory = accessory.order_by("-price")
                 case 3:
-                    phone = phone.order_by("-dayOfManufacture")
+                    accessory = accessory.order_by("-dayOfManufacture")
                 case 4:
-                    phone = phone.order_by("-sold")
+                    accessory = accessory.order_by("-sold")
 
 
         return render(request, self.template_name, {
-            'products': phone,
+            'products': accessory,
         })
 
 # ajax request
 def is_ajax(request):
     return request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
 
-def getPhoneDetail(request, phoneId):
+def getAccessoryDetail(request, phoneId):
     if is_ajax(request=request) and request.method == "GET":
-        phone = Phone.objects.filter(id=phoneId)
+        accessory = Accessory.objects.filter(id=phoneId)
         data = {
-            'phone': serializers.serialize('json', phone, fields=('name', 'thumbnail', 'price'))
+            'accessory': serializers.serialize('json', accessory, fields=('name', 'thumbnail', 'price'))
         }
         return JsonResponse(data, status = 200)
 
