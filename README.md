@@ -1,11 +1,11 @@
 # Mobius-Project
 Cách chạy trang web Mobius khi chưa cài đặt môi trường:
-- Máy cần cài đặt Python và pip, tại folder Mobius-project gõ lệnh pip install -r requirements.txt để cài đặt các gói cần thiết
+- Máy cần cài đặt Python và pip, tại folder Mobius-project mở cmd gõ lệnh pip install -r requirements.txt để cài đặt các gói cần thiết
 - Cài đặt PgAdmin (PostgreSQL) bao gồm các thông tin cơ bản như: user, password, host, port
 - Tạo một database tên Moibus
 - Tạo file .env trong folder, copy nội dung trong file .env.dist và sửa các thông tin như lúc cài đặt PgAdmin
 - Tại folder mở cmd gõ lệnh python manage.py makemigrations và python manage.py migrate để xác nhận các thay đổi
-- Tạo super user trong Django bằng lệnh manage.py createsuperuser
+- Tạo super user trong Django bằng lệnh python manage.py createsuperuser
 - Cuối cùng chạy web bằng lệnh python manage.py runserver
 
 
