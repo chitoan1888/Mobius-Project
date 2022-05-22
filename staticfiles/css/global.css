@@ -1,0 +1,155 @@
+html {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  overflow: auto;
+}
+
+* {
+  box-sizing: inherit;
+  font-family: inherit;
+  font-family: "Work Sans", sans-serif;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+ul,
+ol {
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.app {
+  position: relative;
+  min-height: 100vh;
+}
+
+.btn {
+  outline: none;
+  border: none;
+  background-color: var(--prymari-color);
+  font-weight: 700;
+  color: #fff;
+}
+
+.btn:hover {
+  color: #fff;
+}
+
+.click-cursor {
+  cursor: pointer;
+}
+
+.content {
+  margin-top: var(--header-height);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.overlay.active {
+  z-index: 98;
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+.text-gradient {
+  background-image: var(--gradient-color);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-animation {
+  display: block;
+  outline: none;
+  padding: 12px 31.5px;
+  position: relative;
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  border: 1px solid #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.btn-animation span {
+    position: relative;
+    z-index: 2;
+    transition: color 0.5s
+}
+
+.btn-animation::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: var(--gradient-color);
+    z-index: 1;
+    opacity: 0.5;
+    transform: scaleX(0);
+    transform-origin: left center;
+    -webkit-transition: cubic-bezier(0,.43,.99,.62) 0.3s;
+    transition: cubic-bezier(0,.43,.99,.62) 0.3s;
+}
+
+.btn-animation:hover::before {
+    transform: scaleX(1);
+    opacity: 1;
+}
+
+.btn-animation:hover span {
+    color: #fff;
+    transition: color 0.5s
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  height: 100%;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
