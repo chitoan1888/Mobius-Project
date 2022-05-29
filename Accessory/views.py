@@ -17,7 +17,8 @@ class ProductView(TemplateView):
         accessoryImages = AccessoryImage.objects.filter(accessory=accessory)
         return render(request, self.template_name, {
             'product': accessory,
-            'productImages': accessoryImages
+            'productImages': accessoryImages,
+            'productType': 2
         })
 
 class ListAccessory(TemplateView):
@@ -27,6 +28,7 @@ class ListAccessory(TemplateView):
         accessory = Accessory.objects.all()
         brand = request.GET.get('brand')
         price = None
+        accessoryCategory = request.GET.get('accessoryCategory')
 
 
         if (request.GET.get('price')):
@@ -41,6 +43,10 @@ class ListAccessory(TemplateView):
 
         if (price != None):
             accessory = accessory.filter(price__gte=minPrice, price__lte=maxPrice).order_by("price")
+
+        if (accessoryCategory != None):
+             accessory = accessory.filter(category=accessoryCategory).order_by("dayOfManufacture")
+
 
         # order
         if (request.GET.get('order')):
@@ -57,7 +63,9 @@ class ListAccessory(TemplateView):
 
 
         return render(request, self.template_name, {
+            'title': 'Phụ kiện',
             'products': accessory,
+            'productType': 'accessory'
         })
 
 # ajax request

@@ -51,7 +51,7 @@
       {% endif %}
         <ul class="d-flex justify-content-center navbar__list">
           <li class="navbar__item">
-            <a class="navbar__link" href="/">
+            <a class="navbar__link" href="{% url 'home_view' %}">
               <i class="fas fa-home"></i>
               <span>Trang chủ</span>
             </a>
@@ -63,7 +63,7 @@
             </a>
           </li>
           <li class="navbar__item">
-            <a class="navbar__link" href="./accessories">
+            <a class="navbar__link" href="{% url 'listAccessory' %}">
               <i class="fas fa-headphones-alt"></i>
               <span>Phụ kiện</span>
             </a>

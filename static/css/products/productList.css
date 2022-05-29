@@ -31,12 +31,38 @@
     margin: 4px;
 }
 
-/* .products__list {
-    padding-top: 50px;
-} */
+.products-not-found {
+    display: flex;
+    position: relative;
+    padding-top: 100px;
+}
+
+.products-not-found span {
+    margin-right: 66px;
+    font-size: 95px;
+}
+
+.products-not-found p {
+    font-size: 28px;
+    color: var(--primary-color)
+}
 
 @media (max-width: 767px) {
     .products-new__tabs {
         margin: 0;
+    }
+    .products-not-found {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+    }
+    .products-not-found span {
+        font-size: 54px;
+        margin: 0;
+
+    }
+    .products-not-found p {
+        font-size: 20px;
+        text-align: center;
     }
 }
