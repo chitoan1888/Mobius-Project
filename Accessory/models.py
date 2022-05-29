@@ -21,7 +21,6 @@ AccessoryCategory = (
 Brands = (
     ("apple", "Apple"),
     ("asus", "Asus"),
-    ("htc", "HTC"),
     ("samsung", "Samsung"),
     ("huawei", "Huawei"),
     ("lg", "LG"),

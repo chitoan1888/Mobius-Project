@@ -1,7 +1,7 @@
 {% extends '../app.html' %}
 {% load static %}
 
-{% block title %}Điện thoại - Mobius{% endblock %}
+{% block title %}{{ title }} - Mobius{% endblock %}
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/products/productList.css' %}" type="text/css" />
@@ -10,8 +10,13 @@
 {% endblock %}
 
 {% block content %}
-    {% include 'components/products/filter.html' with filterOn="phone" products=products %}
-    {% include 'components/products/productList.html' with filterOn="phone" products=products %}
+    {% include 'components/products/filter.html' with filterOn=productType products=products %}
+
+    {% if products.count > 0 %}
+        {% include 'components/products/productList.html' with filterOn=productType products=products %}
+    {% else %}
+        {% include 'components/products/productsNotFound.html' %}
+    {% endif %}
 {% endblock %}
 
 {% block scripts %}

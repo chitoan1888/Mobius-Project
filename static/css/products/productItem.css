@@ -84,6 +84,7 @@
 
 @media (max-width: 767px) {
   .product__wrapper {
-    width: 80%;
+    width: 90%;
+    margin: auto;
   }
 }

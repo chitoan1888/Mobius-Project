@@ -17,7 +17,8 @@ class ProductView(TemplateView):
         phoneImages = PhoneImage.objects.filter(phone=phone)
         return render(request, self.template_name, {
             'product': phone,
-            'productImages': phoneImages
+            'productImages': phoneImages,
+            'productType': 1
         })
 
 class ListPhone(TemplateView):
@@ -57,7 +58,9 @@ class ListPhone(TemplateView):
 
 
         return render(request, self.template_name, {
+            'title': 'Điện thoại',
             'products': phone,
+            'productType': 'phone'
         })
 
 # ajax request
