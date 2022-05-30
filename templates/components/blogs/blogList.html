@@ -21,7 +21,7 @@
   <div class="swiper blogs-new__list {{ filterOn }}">
     <div class="swiper-wrapper">
       {% for blog in blogs %}
-        {% include 'components/blogs/blogItem.html' with blog=blog style="swiper" %}
+        {% include 'components/blogs/blogItem.html' with blog=blog isHome="true" %}
       {% endfor %}
     </div>
   </div>
@@ -46,4 +46,15 @@
     },
   });
 </script>
+{% else %}
+<div class='blog__side-bar'>
+  <h2>
+    <span>Bài viết mới</span>
+  </h2>
+  <div class='recent-blog__list'>
+    {% for blog in blogs %}
+      {% include 'components/blogs/blogItem.html' with blog=blog %}
+    {% endfor %}
+  </div>
+</div>
 {% endif %}

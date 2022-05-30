@@ -3,13 +3,12 @@
 
 {% if isHome %}
 <div class="swiper-slide">
-{% endif %}
     <div class="blog__wrapper">
             <div class="blog__thumb-wrapper">
                 <img
                     class="blog__thumb" src="/media/{{ blog.thumbnail }}"
-                    alt="blog image"/
-                >
+                    alt="blog image"
+                />
                 <div class="blog__thumb-overlay">
                     <a
                         target="_blank"
@@ -47,6 +46,26 @@
             navigator.clipboard.writeText(blogLink);
         }
     </script>
-{% if isHome %}
+</div>
+{% else %}
+<div class='blog-recent__wrapper'>
+    <div class="blog-recent__thumb-wrapper">
+        <img
+            class="blog-recent__thumb" src="/media/{{ blog.thumbnail }}"
+            alt="blog image"
+        />
+    </div>
+    <div class='blog-recent__info'>
+        <a href="/tin-tuc/{{ blog.title.split|join:"-" }}">
+            <h4 class='blog-recent__title'>
+                {{ blog.title }}
+            </h4>
+        </a>
+        <span class='blog-recent__release-date'>
+            <i class="fas fa-calendar-alt"></i>
+            {{ blog.releaseDate|date:"d/n/Y" }}
+        </span>
+    </div>
 </div>
 {% endif %}
+

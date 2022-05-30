@@ -1,0 +1,29 @@
+.blog__header {
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+.blog-detail__title {
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: .02em;
+}
+
+.blog__release-date {
+    font-size: 14px;
+    color: #818283
+}
+
+
+.blog__thumb {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: top center;
+    height: 300px;
+}
+
+.blog__heading p {
+    text-align: justify;
+    margin-top: 1rem;
+}

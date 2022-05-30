@@ -1,0 +1,23 @@
+<div class='blog__header'>
+    <h1 class='blog-detail__title'>{{ blog.title }}</h1>
+    <span class='blog__release-date'>
+        <i class="fas fa-calendar-alt"></i>
+        {{ blog.releaseDate|date:"d/n/Y" }}
+    </span>
+</div>
+
+<div class='blog__content'>
+    <div class='blog__heading'>
+        <div
+            class='blog__thumb'
+            style="background-image: url('/media/{{ blog.thumbnail }}')"
+        >
+        </div>
+        <p>{{ blog.shortDescription }}</p>
+    </div>
+    <div class="blog__detail">
+        {% autoescape off %}
+            {{ blog.content }}
+        {% endautoescape %}
+    </div>
+</div>
