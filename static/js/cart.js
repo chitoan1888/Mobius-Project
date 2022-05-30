@@ -22,41 +22,58 @@ $.ajaxSetup({
     }
 });
 
-const addProductToCard = (productId) => {
+const addProductToCard = (productId, type) => {
     if($(`.${productId}`).length === 1) {
         $.ajax({
             type: 'POST',
-            url: `/update/ajax/cart/`,
+            url: `/update/ajax/cart/${type}`,
             dataType: "json",
             data: {
-                "phoneId": productId,
+                "productId": productId,
             },
             success: function (response) {
-                console.log(response);
-                $(".header .cart-list").html("");
+                // console.log(response);
                 getUserCartData();
             },
             error: function (response) {
-                console.log(response);
+                // console.log(response);
             }
         })
     } else {
         $.ajax({
             type: 'POST',
-            url: `/post/ajax/cart/`,
+            url: `/post/ajax/cart/${type}`,
             dataType: "json",
             data: {
-                "phoneId": productId,
+                "productId": productId,
                 "quantity": 1,
             },
             success: function (response) {
-                console.log(response);
-                $(".header .cart-list").html("");
+                // console.log(response);
                 getUserCartData();
             },
             error: function (response) {
-                console.log(response);
+                // console.log(response);
             }
         })
     }
+}
+
+const removeProductFromCart = (productId, type) => {
+    $.ajax({
+        type: 'POST',
+        url: `/remove/ajax/cart/${type}`,
+        dataType: "json",
+        data: {
+            "productId": productId,
+        },
+        success: function (response) {
+            // console.log(response);
+            $(`.header .cart-list .cart-item.${productId}`).remove();
+            getUserCartData();
+        },
+        error: function (response) {
+            // console.log(response);
+        }
+    })
 }

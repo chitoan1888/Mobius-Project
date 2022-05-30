@@ -72,9 +72,9 @@ class ListAccessory(TemplateView):
 def is_ajax(request):
     return request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
 
-def getAccessoryDetail(request, phoneId):
+def getAccessoryDetail(request, accessoryId):
     if is_ajax(request=request) and request.method == "GET":
-        accessory = Accessory.objects.filter(id=phoneId)
+        accessory = Accessory.objects.filter(id=accessoryId)
         data = {
             'accessory': serializers.serialize('json', accessory, fields=('name', 'thumbnail', 'price'))
         }
