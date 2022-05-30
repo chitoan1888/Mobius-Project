@@ -36,3 +36,29 @@
         margin: 0;
     }
 }
+
+/* recent blogs */
+.blog__side-bar {
+
+}
+
+.blog__side-bar h2 {
+    position: relative;
+    width: 100%;
+    height: 28px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.blog__side-bar h2 span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    text-transform: uppercase;
+    padding: 2px  4px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--primary-color);
+    height: 100%;
+}
