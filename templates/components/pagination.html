@@ -1,0 +1,82 @@
+{% load mathfilters %}
+
+<nav aria-label="pagination" class="container">
+  <ul class="pagination">
+    {% if page.previous_page_number >= 1 %}
+        <li class="page-item">
+            <a
+                class="page-link"
+                tabindex="-1"
+                onclick="filter(null, null, null, null, {{ page.previous_page_number|sub:1 }})"
+            >
+                Lùi
+            </a>
+        </li>
+        <li class="page-item">
+            <a
+                class="page-link"
+                onclick="filter(null, null, null, null, {{ page.previous_page_number }})"
+            >
+                {{ page.previous_page_number }}
+            </a>
+        </li>
+        <li class="page-item active">
+            <a class="page-link" href="#">
+                {{ page.previous_page_number|add:1 }}
+                <span class="sr-only">(current)</span></a
+            >
+        </li>
+        {% if page.has_next %}
+            <li class="page-item">
+                <a
+                    class="page-link"
+                    onclick="filter(null, null, null, null, {{ page.next_page_number }})"
+                >
+                    {{ page.next_page_number }}
+                </a>
+            </li>
+
+            <li class="page-item">
+                <a
+                    class="page-link"
+                    onclick="filter(null, null, null, null, {{ page.next_page_number|add:1 }})"
+                >
+                    Tiến
+                </a>
+            </li>
+        {% endif %}
+    {% else %}
+        <li class="page-item active">
+            <a class="page-link"> 1 </a>
+            <span class="sr-only">(current)</span>
+            </li>
+            <li class="page-item">
+                <a
+                    class="page-link"
+                    onclick="filter(null, null, null, null, {{ page.next_page_number }})"
+                >
+                    {{ page.next_page_number }}
+                </a>
+            </li>
+            {% if page.next_page_number < paginator.num_pages %}
+                <li class="page-item">
+                    <a
+                        class="page-link"
+                        onclick="filter(null, null, null, null, {{ page.next_page_number|add:1 }})"
+                    >
+                        {{ page.next_page_number|add:1 }}
+                    </a>
+                </li>
+
+                <li class="page-item">
+                    <a
+                        class="page-link"
+                        onclick="filter(null, null, null, null, {{ page.next_page_number|add:2 }})"
+                    >
+                        Tiến
+                    </a>
+                </li>
+            {% endif %}
+    {% endif %}
+  </ul>
+</nav>

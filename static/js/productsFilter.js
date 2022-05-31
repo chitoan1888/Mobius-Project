@@ -1,4 +1,4 @@
-const filter = (brand = null, price = null, order = null, accessoryCategory = null) => {
+const filter = (brand = null, price = null, order = null, accessoryCategory = null, page = 1) => {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
@@ -17,6 +17,8 @@ const filter = (brand = null, price = null, order = null, accessoryCategory = nu
     if (accessoryCategory) {
         urlParams.set('accessoryCategory', accessoryCategory)
     }
+
+    urlParams.set('page', page)
 
     window.location.assign(`?${urlParams.toString()}`)
 }

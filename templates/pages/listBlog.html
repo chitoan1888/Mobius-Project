@@ -1,0 +1,8 @@
+{% extends '../app.html' %}
+{% load static %}
+
+{% block title %}Tin tức{% endblock %}
+
+{% block content %}
+    {{ page_obj.has_previous }}
+{% endblock %}
