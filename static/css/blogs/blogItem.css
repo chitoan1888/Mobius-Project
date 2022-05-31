@@ -100,6 +100,25 @@
   width: 50%;
 }
 
+.vertical .blog__wrapper {
+  height: 460px;
+}
+
+.vertical .blog__thumb-wrapper {
+  width: 100%;
+  height: 225px;
+}
+
+.vertical .blog__info {
+  width: 100%;
+  height: 220px;
+  box-sizing: border-box;
+  bottom: 0;
+  top: unset;
+  transform: none;
+  border: 1px solid #eee;
+}
+
 
 @media (max-width: 1200px) {
     .blog__wrapper {
@@ -119,6 +138,10 @@
         top: unset;
         transform: none;
         border: 1px solid #eee;
+    }
+
+    .vertical .blog__btn {
+      width: 100%;
     }
 }
 

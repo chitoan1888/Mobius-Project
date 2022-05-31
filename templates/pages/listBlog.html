@@ -10,7 +10,7 @@
 
 {% block content %}
 
-    {% include 'components/blogs/blogList.html' with isHome="true" blogs=blogs|slice:"0:6" %}
+    {% include 'components/blogs/blogList.html' with isHome="true" noSwiper="true" blogs=blogs %}
 
     {% if paginator.num_pages > 1 %}
         {% include 'components/pagination.html' with page=currentPage paginator=paginator filterOn=productType %}
