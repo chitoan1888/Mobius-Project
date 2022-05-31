@@ -24,6 +24,11 @@ $('#toggleLoginMenu').click(() => {
 
 const getUserCartData = () => {
     $(".header .cart-list").html("");
+    const cartOrder = $(".cart-order__list");
+    if (cartOrder) {
+        cartOrder.html("");
+    }
+
     if (is_authenticated) {
         $.ajax({
             type: 'GET',
@@ -32,7 +37,6 @@ const getUserCartData = () => {
             success: function (response) {
                 if(!response["valid"]){
                     cartItems = JSON.parse(response.cartItems);
-                    console.log(cartItems);
                     createCartHeaderItem(cartItems);
                 }
             },
@@ -151,21 +155,43 @@ const renderCartItem = (productData, quantity, type) => {
     const span1 = document.createElement("span");
     span1.className = "cart-item__price";
     span1.innerText = new Intl.NumberFormat().format(parseInt(productData.fields.price, 10)) + "đ";
-    div2.append(span1);
 
     const span2 = document.createElement("span");
     span2.className = "cart-item__qnt";
     span2.innerText = ` x ${quantity}`;
-    div2.append(span2);
 
     const deleteBtn = document.createElement("button")
     deleteBtn.className = "cart-item__remove-btn"
     deleteBtn.innerText = 'Xóa'
     deleteBtn.onclick = () => removeProductFromCart(productData.pk, type)
-    div2.append(deleteBtn);
+
+    div2.append(span1, span2, deleteBtn);
+
 
     div1.append(div2);
 
     li.append(div1);
     $(".header .cart-list").append(li);
+
+    const cartOrder = $(".cart-order__list");
+    if (cartOrder) {
+        // const cloneImg = img.cloneNode(true)
+        // const cloneDiv1 = div1.cloneNode(true);
+        // const cloneSpan1 = span1.cloneNode(tru   e);
+        // const cloneSpan2 = span2.cloneNode(true);
+        // const cloneDeleteBtn = deleteBtn.clone(true);
+
+        // const cloneDiv2 = document.createElement("div");
+        // cloneDiv2.className = "cart-item__price-wrap";
+
+        // cloneDiv2.append(cloneSpan1, cloneSpan2, cloneDeleteBtn)
+
+        // const clone = document.createElement("li");
+        // li.className = `cart-item ${productData.pk}`;
+
+        const clone = li.cloneNode(true)
+        clone.querySelector(".cart-item__remove-btn").onclick = () => removeProductFromCart(productData.pk, type)
+
+        cartOrder.append(clone);
+    }
 }

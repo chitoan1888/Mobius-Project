@@ -75,11 +75,3 @@ def removeProductFromCart(request, product_type):
 
 class OrderView(TemplateView):
     template_name = './pages/order.html'
-
-    def get(self, request):
-        cart = get_object_or_404(Cart, user=request.user)
-        cartItems = CartItem.objects.filter(cart=cart)
-
-        return render(request, self.template_name, {
-            'cartItems': cartItems,
-        })

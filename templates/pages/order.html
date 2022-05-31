@@ -4,13 +4,40 @@
 {% block title %}Mobius{% endblock %}
 
 {% block head %}
-
+<link rel="stylesheet" href="{% static 'css/cart/cartOrder.css' %}" type="text/css" />
+<link rel="stylesheet" href="{% static 'css/paymentForm.css' %}" type="text/css" />
 {% endblock %}
 
 {% block content %}
     <div class='container'>
-        {% for obj in cartItems %}
-            {{obj.phone.name}}<br/>
-        {% endfor %}
+        <div class='row'>
+            <div class='col-xl-8 col-md-6 col-12 order-2 order-sm-1'>
+                {% include 'components/paymentForm.html' %}
+            </div>
+            <div class='col-xl-4 col-md-6 col-12 order-1 order-sm-2'>
+                {% include 'components/cart/cartOrder.html' %}
+            </div>
+        </div>
     </div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/validator.js' %}"></script>
+<script>
+    Validator({
+        form: '#payment-form',
+        formGroupSelector: '.form-group',
+        errorSelector: '.form-message',
+        rules: [
+            Validator.isRequire('#address', 'Vui lòng nhập địa chỉ nhận hàng'),
+            Validator.isRequire('#fullname', 'Vui lòng nhập Họ và tên'),
+            Validator.isRequire('#phoneNumber', 'Vui lòng nhập Số điện thoại'),
+            Validator.isNumber('#phoneNumber', 'Số điện thoại chỉ chứa ký tự [0-9]'),
+            Validator.minLength('#phoneNumber', 10, 'Số điện thoại phải tối thiểu 10 số'),
+            Validator.maxLength('#phoneNumber', 11, 'Số điện thoại phải không quá 11 số'),
+        ],
+    });
+</script>
+<script src="https://www.paypal.com/sdk/js?client-id=AfsEkkNnHppFjQdpZAxQmmXGOw4-Mjnkov-3mjhZXleaOcQeV1aXP6XnTbRof99iYjTU5H8KzwtgO8LL&currency=USD"></script>
+<script src="{% static 'js/paypal.js' %}"></script>
 {% endblock %}
