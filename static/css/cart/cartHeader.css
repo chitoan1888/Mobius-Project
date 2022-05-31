@@ -103,3 +103,13 @@
 .cart-item__remove-btn:hover {
     text-decoration: underline;
 }
+
+@media (max-width: 767px) {
+    .header__cart-wrap {
+        position: unset;
+    }
+    .cart-container {
+        top: 158%;
+        border-radius: 0;
+    }
+}
