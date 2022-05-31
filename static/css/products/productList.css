@@ -50,6 +50,7 @@
 @media (max-width: 767px) {
     .products-new__tabs {
         margin: 0;
+        display: none !important;
     }
     .products-not-found {
         flex-direction: column;
