@@ -1,4 +1,4 @@
-    .cart-container {
+.cart-container {
     position: absolute;
     right: 0;
     top: 80%    ;
@@ -107,6 +107,7 @@
 @media (max-width: 767px) {
     .header__cart-wrap {
         position: unset;
+        margin: 0 10px;
     }
     .cart-container {
         top: 158%;
