@@ -23,16 +23,82 @@ $.ajaxSetup({
 });
 
 const addProductToCard = (productId, type) => {
-    if($(`.${productId}`).length === 1) {
+    if (is_authenticated) {
+        if($(`.${productId}`).length === 1) {
+            $.ajax({
+                type: 'POST',
+                url: `/update/ajax/cart/${type}`,
+                dataType: "json",
+                data: {
+                    "productId": productId,
+                },
+                success: function (response) {
+                    // console.log(response);
+                    getUserCartData();
+                },
+                error: function (response) {
+                    // console.log(response);
+                }
+            })
+        } else {
+            $.ajax({
+                type: 'POST',
+                url: `/post/ajax/cart/${type}`,
+                dataType: "json",
+                data: {
+                    "productId": productId,
+                    "quantity": 1,
+                },
+                success: function (response) {
+                    // console.log(response);
+                    getUserCartData(is_authenticated);
+                },
+                error: function (response) {
+                    // console.log(response);
+                }
+            })
+        }
+    } else {
+        const cart = JSON.parse(
+            sessionStorage.getItem('cart')
+        );
+
+        if($(`.${productId}`).length === 1) {
+            cart.map((cartItem) => {
+                if (cartItem.fields.phone === productId || cartItem.fields.accessory === productId) {
+                    cartItem.fields.quantity = cartItem.fields.quantity + 1
+                }
+            })
+        } else {
+            cart.push({
+                fields: {
+                    phone: type === 1 ? productId : null,
+                    accessory: type === 2 ? productId : null,
+                    quantity: 1
+                }
+            })
+        }
+
+        sessionStorage.setItem(
+            'cart',
+            JSON.stringify(cart)
+        )
+        getUserCartData();
+    }
+}
+
+const removeProductFromCart = (productId, type) => {
+    if (is_authenticated) {
         $.ajax({
             type: 'POST',
-            url: `/update/ajax/cart/${type}`,
+            url: `/remove/ajax/cart/${type}`,
             dataType: "json",
             data: {
                 "productId": productId,
             },
             success: function (response) {
                 // console.log(response);
+                $(`.header .cart-list .cart-item.${productId}`).remove();
                 getUserCartData();
             },
             error: function (response) {
@@ -40,40 +106,19 @@ const addProductToCard = (productId, type) => {
             }
         })
     } else {
-        $.ajax({
-            type: 'POST',
-            url: `/post/ajax/cart/${type}`,
-            dataType: "json",
-            data: {
-                "productId": productId,
-                "quantity": 1,
-            },
-            success: function (response) {
-                // console.log(response);
-                getUserCartData();
-            },
-            error: function (response) {
-                // console.log(response);
-            }
-        })
-    }
-}
+        const cart = JSON.parse(
+            sessionStorage.getItem('cart')
+        );
 
-const removeProductFromCart = (productId, type) => {
-    $.ajax({
-        type: 'POST',
-        url: `/remove/ajax/cart/${type}`,
-        dataType: "json",
-        data: {
-            "productId": productId,
-        },
-        success: function (response) {
-            // console.log(response);
-            $(`.header .cart-list .cart-item.${productId}`).remove();
-            getUserCartData();
-        },
-        error: function (response) {
-            // console.log(response);
-        }
-    })
+        const newCart = cart.filter((cartItem) => (
+            cartItem.fields.phone !== productId &&
+            cartItem.fields.accessory !== productId
+        ))
+
+        sessionStorage.setItem(
+            'cart',
+            JSON.stringify(newCart)
+        )
+        getUserCartData();
+    }
 }

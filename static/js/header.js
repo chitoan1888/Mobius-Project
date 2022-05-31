@@ -22,8 +22,36 @@ $('#toggleLoginMenu').click(() => {
     $('.navbar__mobile-login').toggleClass("active");
 })
 
-window.onload = () => {
-    // Check active navlink
+const getUserCartData = () => {
+    $(".header .cart-list").html("");
+    if (is_authenticated) {
+        $.ajax({
+            type: 'GET',
+            url: '/get/ajax/cart/',
+            data: null,
+            success: function (response) {
+                if(!response["valid"]){
+                    cartItems = JSON.parse(response.cartItems);
+                    console.log(cartItems);
+                    createCartHeaderItem(cartItems);
+                }
+            },
+            error: function (response) {
+                cartItems = null;
+            }
+          })
+    } else {
+        let cartItems = sessionStorage.getItem('cart');
+        if (!cartItems) {
+            sessionStorage.setItem('cart', JSON.stringify([]));
+            cartItems = []
+        }
+
+        createCartHeaderItem(JSON.parse(cartItems));
+    }
+}
+
+const checkAtiveNavLink = () => {
     const path = window.location.pathname;
     const navItems = $(".navbar__link");
     let index = -1;
@@ -41,27 +69,6 @@ window.onload = () => {
     if (index !== -1) {
         navItems[index].classList.add("active");
     }
-
-    // Get user cart data
-    getUserCartData();
-}
-
-const getUserCartData = () => {
-    $(".header .cart-list").html("");
-    $.ajax({
-        type: 'GET',
-        url: '/get/ajax/cart/',
-        data: null,
-        success: function (response) {
-            if(!response["valid"]){
-                cartItems = JSON.parse(response.cartItems);
-                createCartHeaderItem(cartItems);
-            }
-        },
-        error: function (response) {
-            cartItems = null;
-        }
-      })
 }
 
 const createCartHeaderItem = (cartItems) => {
@@ -105,7 +112,7 @@ const createCartHeaderItem = (cartItems) => {
             }
         })
     } else {
-        // $(".header .cart-container").removeClass("active");
+        $(".header .cart-container").removeClass("active");
         const div = document.createElement("div");
         div.className = 'cart-no-item'
         div.innerText = 'Chưa có sản phẩm nào được thêm vào'
