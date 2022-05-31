@@ -22,11 +22,15 @@ class BlogView(TemplateView):
 def ListBlog(request):
     template_name = './pages/listBlog.html'
     blogs = Blog.objects.all().order_by('releaseDate')
-    paginator = Paginator(blogs, 1)
 
-    page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
+    paginator = Paginator(blogs, 6)
+    if (request.GET.get('page')):
+        page_number = int(request.GET.get('page'))
+    else:
+        page_number = 1
 
     return render(request, template_name, {
-        'page_obj': page_obj,
+        'blogs': paginator.page(page_number).object_list,
+        'paginator': paginator,
+        'currentPage': paginator.page(page_number)
     })

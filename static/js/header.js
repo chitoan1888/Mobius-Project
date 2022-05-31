@@ -62,8 +62,10 @@ const checkAtiveNavLink = () => {
         index = 1;
     } else if (path.includes("/phu-kien")) {
         index = 2;
-    } else if (path.includes("/lien-he")) {
+    }else if (path.includes("/tin-tuc")) {
         index = 3;
+    } else if (path.includes("/lien-he")) {
+        index = 4;
     }
 
     if (index !== -1) {
