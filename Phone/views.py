@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404
 from django.http import JsonResponse
 from django.core import serializers
 import json
-
+from django.core.paginator import Paginator
 
 # template render
 class ProductView(TemplateView):
@@ -21,47 +21,53 @@ class ProductView(TemplateView):
             'productType': 1
         })
 
-class ListPhone(TemplateView):
+def ListPhone(request):
     template_name = "./pages/listProduct.html"
 
-    def get(self, request):
-        phone = Phone.objects.all()
-        brand = request.GET.get('brand')
-        price = None
+    phone = Phone.objects.all()
+    brand = request.GET.get('brand')
+    price = None
 
 
-        if (request.GET.get('price')):
-            price = json.loads(request.GET.get('price'))
-            minPrice = int(price['minPrice'])
-            maxPrice = int(price['maxPrice'])
+    if (request.GET.get('price')):
+        price = json.loads(request.GET.get('price'))
+        minPrice = int(price['minPrice'])
+        maxPrice = int(price['maxPrice'])
 
 
-        if (brand != None):
-            phone = phone.filter(brand=brand).order_by("dayOfManufacture")
+    if (brand != None):
+        phone = phone.filter(brand=brand).order_by("dayOfManufacture")
 
 
-        if (price != None):
-            phone = phone.filter(price__gte=minPrice, price__lte=maxPrice).order_by("price")
+    if (price != None):
+        phone = phone.filter(price__gte=minPrice, price__lte=maxPrice).order_by("price")
 
-        # order
-        if (request.GET.get('order')):
-            order = int(request.GET.get('order'))
-            match order:
-                case 1:
-                    phone = phone.order_by("price")
-                case 2:
-                    phone = phone.order_by("-price")
-                case 3:
-                    phone = phone.order_by("-dayOfManufacture")
-                case 4:
-                    phone = phone.order_by("-sold")
+    # order
+    if (request.GET.get('order')):
+        order = int(request.GET.get('order'))
+        match order:
+            case 1:
+                phone = phone.order_by("price")
+            case 2:
+                phone = phone.order_by("-price")
+            case 3:
+                phone = phone.order_by("-dayOfManufacture")
+            case 4:
+                phone = phone.order_by("-sold")
 
+    paginator = Paginator(phone, 12)
+    if (request.GET.get('page')):
+        page_number = int(request.GET.get('page'))
+    else:
+        page_number = 1
 
-        return render(request, self.template_name, {
-            'title': 'Điện thoại',
-            'products': phone,
-            'productType': 'phone'
-        })
+    return render(request, template_name, {
+        'title': 'Điện thoại',
+        'products': paginator.page(page_number).object_list,
+        'productType': 'phone',
+        'paginator': paginator,
+        'currentPage': paginator.page(page_number)
+    })
 
 # ajax request
 def is_ajax(request):

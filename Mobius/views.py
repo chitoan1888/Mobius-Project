@@ -38,8 +38,10 @@ def search(request):
         if query is not None:
             lookups= Q(name__icontains=query) | Q(price__icontains=query) | Q(brand__icontains=query) | Q(description__icontains=query) | Q(keywordsSearch__icontains=query)
             results= Phone.objects.filter(lookups).distinct()
-            context={'products': results,
-                     'submitbutton': submitbutton}
+            context={
+                'products': results,
+                'title': 'Kết quả tìm kiếm',
+                'submitbutton': submitbutton}
             return render(request, template_name, context)
         else:
             return render(request, template_name)

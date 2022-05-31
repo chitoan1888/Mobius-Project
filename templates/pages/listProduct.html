@@ -17,6 +17,10 @@
     {% else %}
         {% include 'components/products/productsNotFound.html' %}
     {% endif %}
+
+    {% if paginator.num_pages > 1 %}
+        {% include 'components/pagination.html' with page=currentPage paginator=paginator filterOn=productType %}
+    {% endif %}
 {% endblock %}
 
 {% block scripts %}

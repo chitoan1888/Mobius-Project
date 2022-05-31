@@ -48,6 +48,10 @@ class Phone(models.Model):
     mobileNetwork = models.CharField(max_length=10, null=True)
     numberOfSims = models.CharField(max_length=100, null=True)
     batteryCapacity = models.IntegerField(default=1000, null=True)
+
+    class Meta:
+        ordering = ['dayOfManufacture']
+
     def __str__(self):
         return self.name
 

@@ -154,3 +154,19 @@ li {
   -webkit-align-items: center;
   align-items: center;
 }
+
+.pagination {
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.page-item.active .page-link {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.page-link,
+.page-link:hover {
+  color: var(--primary-color);
+  cursor: pointer;
+}

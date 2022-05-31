@@ -9,16 +9,16 @@
     <div
       class="blog-new__navigation d-flex align-items-center order-2 order-md-3"
     >
-      <div class="blog-new__btn-prev {{ filterOn }}">
+      <div class="blog-new__btn-prev">
         <i class="fas fa-caret-square-left"></i>
       </div>
-      <div class="blog-new__btn-next {{ filterOn }}">
+      <div class="blog-new__btn-next">
         <i class="fas fa-caret-square-right"></i>
       </div>
     </div>
   </div>
 
-  <div class="swiper blogs-new__list {{ filterOn }}">
+  <div class="swiper blogs-new__list">
     <div class="swiper-wrapper">
       {% for blog in blogs %}
         {% include 'components/blogs/blogItem.html' with blog=blog isHome="true" %}
