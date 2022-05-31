@@ -225,8 +225,8 @@
   height: 64px;
   background-color: #5085a3;
   z-index: -1;
-  transform: translateY(-100%);
-  transition: all 0.3s 0.5s;
+  /* transform: translateY(-100%);
+  transition: all 0.3s 0.5s; */
 }
 
 .header__search-btn.active {
