@@ -59,6 +59,7 @@
   <body>
     <div class="app">
       {% include 'components/header.html' %}
+      {{ user.}}
 
       <div class="content">
         {% block content %}{% endblock %}
@@ -81,6 +82,16 @@
     ></script>
     <script src="{% static 'js/header.js' %}"></script>
     <script src="{% static 'js/cart.js' %}"></script>
+    <script>
+      var is_authenticated = {{ user.is_authenticated|yesno:"true,false" }}
+      window.onload = () => {
+        // Check active navlink
+        checkAtiveNavLink();
+
+        // Get user cart data
+        getUserCartData();
+      }
+    </script>
     {% block scripts %}{% endblock %}
   </body>
 </html>

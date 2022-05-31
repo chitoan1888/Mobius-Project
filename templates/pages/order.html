@@ -1,0 +1,16 @@
+{% extends '../app.html' %}
+{% load static %}
+
+{% block title %}Mobius{% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+    <div class='container'>
+        {% for obj in cartItems %}
+            {{obj.phone.name}}<br/>
+        {% endfor %}
+    </div>
+{% endblock %}

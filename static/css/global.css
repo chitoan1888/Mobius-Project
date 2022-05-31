@@ -36,7 +36,12 @@ li {
 
 .app {
   position: relative;
-  min-height: 100vh;
+}
+
+.content {
+  min-height: calc(100vh - var(--header-height) - 309px);
+  margin-top: calc(var(--header-height) + var(--search-bar-height));
+
 }
 
 .btn {
@@ -53,10 +58,6 @@ li {
 
 .click-cursor {
   cursor: pointer;
-}
-
-.content {
-  margin-top: var(--header-height);
 }
 
 .overlay {
@@ -152,4 +153,20 @@ li {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
+}
+
+.pagination {
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.page-item.active .page-link {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.page-link,
+.page-link:hover {
+  color: var(--primary-color);
+  cursor: pointer;
 }

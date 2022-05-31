@@ -32,6 +32,10 @@
   height: 54px;
 }
 
+.product__price {
+  text-align: center;
+}
+
 .product__price strong {
   color: #fd475a;
 }
@@ -42,10 +46,10 @@
 
 .product-overlay {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  top: 20px;
+  bottom: 20px;
+  left: 10px;
+  right: 10px;
   z-index: 1;
 }
 
@@ -54,6 +58,8 @@
   left: 0;
   right: 0;
   top: 100px;
+  display: flex;
+  justify-content: center;
 }
 
 .product__btn {
@@ -63,6 +69,7 @@
   cursor: pointer;
   opacity: 0;
   transition: opacity 0.3s;
+  margin: 0 3px;
 }
 
 .product__wrapper:hover .product__btn {
@@ -77,6 +84,7 @@
 
 @media (max-width: 767px) {
   .product__wrapper {
-    width: 80%;
+    width: 90%;
+    margin: auto;
   }
 }

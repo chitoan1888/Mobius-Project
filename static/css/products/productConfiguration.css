@@ -1,6 +1,5 @@
 .product-configuration {
     width: 100%;
-    min-height: 710px;
     border-radius: 8px;
     border: 1px solid #e0e1e4;
     margin-top: 40px;
@@ -14,10 +13,10 @@
 }
 
 .product-configuration .product-thumb {
-    width: 350px;
-    height: 350px;
+    width: 320px;
+    height: 320px;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 100% 100%;
     background-position: center center;
     margin-bottom: 30px;
 }

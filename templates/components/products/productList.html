@@ -10,24 +10,33 @@
           {% endif %}
         </h3>
         <div class="products-new__tabs d-flex align-items-center justify-content-center justify-content-md-start flex-fill h-100 order-3 order-md-2">
+          {% if filterOn == 'phone' %}
             <a
-              href="./"
-              class="products-new__tab"
-            >
-              Nổi bật
-            </a>
-            <a
-              href="./"
+              href="{% url 'listPhones' %}?order=4"
               class="products-new__tab"
             >
               Bán chạy nhất
             </a>
             <a
-              href="./"
+              href="{% url 'listPhones' %}?order=3"
               class="products-new__tab"
             >
               Mới ra mắt
             </a>
+          {% else %}
+            <a
+              href="{% url 'listAccessory' %}?order=4"
+              class="products-new__tab"
+            >
+              Bán chạy nhất
+            </a>
+            <a
+            href="{% url 'listAccessory' %}?order=3"
+              class="products-new__tab"
+            >
+              Mới ra mắt
+            </a>
+          {% endif %}
         </div>
         <div class="product-new__navigation d-flex align-items-center order-2 order-md-3">
             <div class="product-new__btn-prev {{ filterOn }}">
@@ -59,7 +68,7 @@
       spaceBetween: 10,
       autoplay: {
         delay: 2500,
-        disableOnInteraction: false,
+        disableOnInteraction: true,
       },
       breakpoints: {
         375: {
@@ -86,7 +95,7 @@
       spaceBetween: 10,
       autoplay: {
         delay: 2500,
-        disableOnInteraction: false,
+        disableOnInteraction: true,
       },
       breakpoints: {
         375: {

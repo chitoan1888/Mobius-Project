@@ -43,7 +43,7 @@
         </div>
       {% else %}
         <div class="navbar__mobile-login">
-          <a class="navbar__link" href="{% url 'login' %}">
+          <a class="navbar__link-login" href="{% url 'login' %}">
             <i class="fas fa-user" style="font-size: 18px"></i>
             <span>Đăng nhập<span>
           </a>
@@ -51,7 +51,7 @@
       {% endif %}
         <ul class="d-flex justify-content-center navbar__list">
           <li class="navbar__item">
-            <a class="navbar__link" href="/">
+            <a class="navbar__link" href="{% url 'home_view' %}">
               <i class="fas fa-home"></i>
               <span>Trang chủ</span>
             </a>
@@ -63,9 +63,15 @@
             </a>
           </li>
           <li class="navbar__item">
-            <a class="navbar__link" href="./accessories">
+            <a class="navbar__link" href="{% url 'listAccessory' %}">
               <i class="fas fa-headphones-alt"></i>
               <span>Phụ kiện</span>
+            </a>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="{% url 'listBlogs' %}">
+              <i class="fas fa-bullhorn"></i>
+              <span>Tin công nghệ</span>
             </a>
           </li>
           <li class="navbar__item">
@@ -77,7 +83,7 @@
         </ul>
       </nav>
 
-      <div class="header__search-btn click-cursor">
+      <div class="header__search-btn active click-cursor">
         <i class="fas fa-search" style="font-size: 18px"></i>
       </div>
 
@@ -122,7 +128,7 @@
     </div>
   </div>
 
-  <div class="header__search-bar-wrap">
+  <div class="header__search-bar-wrap active">
     <form action="{% url 'search_results' %}" class="header__search-bar container"  method="GET" value="{{request.GET.q}}">
       <input
         type="text"

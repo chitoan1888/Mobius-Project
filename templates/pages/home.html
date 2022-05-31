@@ -17,5 +17,9 @@
     {% include 'components/companies.html' %}
     {% include 'components/products/productList.html' with isHome="true" filterOn="phone" products=phones|slice:"0:7" %}
     {% include 'components/products/productList.html' with isHome="true"  filterOn="accessories" products=accessories|slice:"0:7" %}
-    {%  include 'components/blogs/blogList.html' with isHome="true" blogs=blogs|slice:"0:6" %}
+    {% include 'components/blogs/blogList.html' with isHome="true" blogs=blogs|slice:"0:6" %}
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/blog.js' %}"></script>
 {% endblock %}
