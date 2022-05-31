@@ -3,6 +3,20 @@
 
 {% block title %}Tin tức{% endblock %}
 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/blogs/blogList.css' %}" type="text/css" />
+<link rel="stylesheet" href="{% static 'css/blogs/blogItem.css' %}" type="text/css" />
+{% endblock %}
+
 {% block content %}
-    {{ page_obj.has_previous }}
+
+    {% include 'components/blogs/blogList.html' with isHome="true" blogs=blogs|slice:"0:6" %}
+
+    {% if paginator.num_pages > 1 %}
+        {% include 'components/pagination.html' with page=currentPage paginator=paginator filterOn=productType %}
+    {% endif %}
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/blog.js' %}"></script>
 {% endblock %}

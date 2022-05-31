@@ -3,49 +3,43 @@
 
 {% if isHome %}
 <div class="swiper-slide">
-    <div class="blog__wrapper">
-            <div class="blog__thumb-wrapper">
-                <img
-                    class="blog__thumb" src="/media/{{ blog.thumbnail }}"
-                    alt="blog image"
-                />
-                <div class="blog__thumb-overlay">
-                    <a
-                        target="_blank"
-                        href="/tin-tuc/{{ blog.title.split|join:"-" }}"
-                        class="blog__thumb-btn"
-                    >
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                    <div
-                        class="blog__thumb-btn"
-                        onClick="onCopyBlogLink()"
-                    >
-                        <i class="fas fa-link"></i>
-                    </div>
+    <div class="blog__wrapper {{ blog.pk }}">
+        <div class="blog__thumb-wrapper">
+            <img
+                class="blog__thumb" src="/media/{{ blog.thumbnail }}"
+                alt="blog image"
+            />
+            <div class="blog__thumb-overlay">
+                <a
+                    target="_blank"
+                    href="/tin-tuc/{{ blog.title.split|join:"-" }}"
+                    class="blog__thumb-btn"
+                >
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+                <div
+                    class="blog__thumb-btn"
+                    onclick="onCopyBlogLink('{{ blog.pk }}')"
+                >
+                    <i class="fas fa-link"></i>
                 </div>
             </div>
-            <div class="blog__info">
-                <a href="/tin-tuc/{{ blog.title.split|join:"-" }}">
-                    <h4 class="blog__title text-gradient">
-                        {{ blog.title }}
-                    </h4>
-                </a>
-                <p class="blog__shortDes">{{ blog.shortDescription }}</p>
-                <a
-                    href="/tin-tuc/{{ blog.title.split|join:"-" }}"
-                    class="btn-animation blog__btn"
-                >
-                    <span>Đọc thêm</span>
-                </a>
-            </div>
+        </div>
+        <div class="blog__info">
+            <a href="/tin-tuc/{{ blog.title.split|join:"-" }}">
+                <h4 class="blog__title text-gradient">
+                    {{ blog.title }}
+                </h4>
+            </a>
+            <p class="blog__shortDes">{{ blog.shortDescription }}</p>
+            <a
+                href="/tin-tuc/{{ blog.title.split|join:"-" }}"
+                class="btn-animation blog__btn"
+            >
+                <span>Đọc thêm</span>
+            </a>
+        </div>
     </div>
-    <script>
-        const onCopyBlogLink = () => {
-            const blogLink = document.querySelector('.blog__btn').href
-            navigator.clipboard.writeText(blogLink);
-        }
-    </script>
 </div>
 {% else %}
 <div class='blog-recent__wrapper'>
@@ -68,4 +62,3 @@
     </div>
 </div>
 {% endif %}
-
