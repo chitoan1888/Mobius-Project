@@ -1,9 +1,16 @@
+var finalTotalPrice = 0
+
+const checkFieldsAndSubmit = () => {
+    $('.checkout-payment__btn').click();
+}
+
 const checkout = () => {
-    setupBeforeCheckout()
     const paymentMethod = getPaymentMethod()
 
     if (paymentMethod === 1) {
         checkoutByPaypal()
+    } else {
+
     }
 }
 
@@ -16,7 +23,7 @@ const checkoutByPaypal = () => {
             return actions.order.create({
                 purchase_units: [{
                     amount: {
-                        value: '88.44'
+                        value: (finalTotalPrice/23000).toFixed(2)
                     }
                 }]
             });

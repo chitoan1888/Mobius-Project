@@ -104,6 +104,15 @@
     text-decoration: underline;
 }
 
+.cart__total-price-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart__total-price-wrap span:first-child {
+    font-weight: 600;
+}
+
 @media (max-width: 767px) {
     .header__cart-wrap {
         position: unset;

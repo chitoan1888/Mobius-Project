@@ -3,7 +3,11 @@
     <ul class="cart-order__list">
 
     </ul>
-    <div id='paypal-button-container' class='checkout-wrap' onclick='checkout()'>
+    <div class='cart__total-price-wrap'>
+        <span class="text-gradient">Tổng cộng</span>
+        <span class='cart-order__total-price'></span>
+    </div>
+    <div id='paypal-button-container' class='checkout-wrap' onclick='checkFieldsAndSubmit()'>
         <div class='btn-animation checkout-btn'>
             <span>THANH TOÁN</span>
         </div>

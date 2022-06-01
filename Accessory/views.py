@@ -83,7 +83,7 @@ def getAccessoryDetail(request, accessoryId):
     if is_ajax(request=request) and request.method == "GET":
         accessory = Accessory.objects.filter(id=accessoryId)
         data = {
-            'accessory': serializers.serialize('json', accessory, fields=('name', 'thumbnail', 'price'))
+            'accessory': serializers.serialize('json', accessory, fields=('name', 'thumbnail', 'price',  'saleOff'))
         }
         return JsonResponse(data, status = 200)
 

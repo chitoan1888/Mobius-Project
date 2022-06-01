@@ -37,7 +37,17 @@ const getUserCartData = () => {
             success: function (response) {
                 if(!response["valid"]){
                     cartItems = JSON.parse(response.cartItems);
+                    totalPrice = new Intl.NumberFormat().format(
+                        Math.round(JSON.parse(response.totalPrice))
+                    ) + "đ";
                     createCartHeaderItem(cartItems);
+                    $('.cart__total-price').text(totalPrice)
+                    finalTotalPrice = Math.round(JSON.parse(response.totalPrice))
+
+                    const cartOrder = $(".cart-order__list");
+                    if (cartOrder) {
+                        $('.cart-order__total-price').text(totalPrice)
+                    }
                 }
             },
             error: function (response) {
@@ -46,12 +56,25 @@ const getUserCartData = () => {
           })
     } else {
         let cartItems = sessionStorage.getItem('cart');
-        if (!cartItems) {
+        let totalPrice = sessionStorage.getItem('totalPrice');
+        if (!cartItems && !totalPrice) {
             sessionStorage.setItem('cart', JSON.stringify([]));
+            sessionStorage.setItem('totalPrice', '0');
             cartItems = []
+            totalPrice = 0
         }
 
         createCartHeaderItem(JSON.parse(cartItems));
+        finalTotalPrice = Math.round(JSON.parse(totalPrice))
+        totalPrice = new Intl.NumberFormat().format(
+            Math.round(JSON.parse(totalPrice))
+        ) + "đ";
+        $('.cart__total-price').text(totalPrice)
+
+        const cartOrder = $(".cart-order__list");
+        if (cartOrder) {
+            $('.cart-order__total-price').text(totalPrice)
+        }
     }
 }
 
@@ -154,7 +177,9 @@ const renderCartItem = (productData, quantity, type) => {
 
     const span1 = document.createElement("span");
     span1.className = "cart-item__price";
-    span1.innerText = new Intl.NumberFormat().format(parseInt(productData.fields.price, 10)) + "đ";
+    span1.innerText = new Intl.NumberFormat().format(
+        Math.round(parseInt(productData.fields.price, 10) - parseInt(productData.fields.price, 10) * parseFloat(productData.fields.saleOff))
+    ) + "đ";
 
     const span2 = document.createElement("span");
     span2.className = "cart-item__qnt";
@@ -163,7 +188,7 @@ const renderCartItem = (productData, quantity, type) => {
     const deleteBtn = document.createElement("button")
     deleteBtn.className = "cart-item__remove-btn"
     deleteBtn.innerText = 'Xóa'
-    deleteBtn.onclick = () => removeProductFromCart(productData.pk, type)
+    deleteBtn.onclick = () => removeProductFromCart(productData.pk, type, quantity)
 
     div2.append(span1, span2, deleteBtn);
 
@@ -175,22 +200,8 @@ const renderCartItem = (productData, quantity, type) => {
 
     const cartOrder = $(".cart-order__list");
     if (cartOrder) {
-        // const cloneImg = img.cloneNode(true)
-        // const cloneDiv1 = div1.cloneNode(true);
-        // const cloneSpan1 = span1.cloneNode(tru   e);
-        // const cloneSpan2 = span2.cloneNode(true);
-        // const cloneDeleteBtn = deleteBtn.clone(true);
-
-        // const cloneDiv2 = document.createElement("div");
-        // cloneDiv2.className = "cart-item__price-wrap";
-
-        // cloneDiv2.append(cloneSpan1, cloneSpan2, cloneDeleteBtn)
-
-        // const clone = document.createElement("li");
-        // li.className = `cart-item ${productData.pk}`;
-
         const clone = li.cloneNode(true)
-        clone.querySelector(".cart-item__remove-btn").onclick = () => removeProductFromCart(productData.pk, type)
+        clone.querySelector(".cart-item__remove-btn").onclick = () => removeProductFromCart(productData.pk, type, quantity)
 
         cartOrder.append(clone);
     }

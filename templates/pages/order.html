@@ -36,6 +36,10 @@
             Validator.minLength('#phoneNumber', 10, 'Số điện thoại phải tối thiểu 10 số'),
             Validator.maxLength('#phoneNumber', 11, 'Số điện thoại phải không quá 11 số'),
         ],
+        onSubmit: function() {
+            setupBeforeCheckout()
+            checkout()
+        }
     });
 </script>
 <script src="https://www.paypal.com/sdk/js?client-id=AfsEkkNnHppFjQdpZAxQmmXGOw4-Mjnkov-3mjhZXleaOcQeV1aXP6XnTbRof99iYjTU5H8KzwtgO8LL&currency=USD"></script>

@@ -16,8 +16,17 @@ def getCart(request):
         print(request.GET)
         cart = get_object_or_404(Cart, user=request.user)
         cartItems = CartItem.objects.filter(cart=cart)
+        totalPrice = 0
+
+        for cartItem in cartItems:
+            if (cartItem.phone != None):
+                totalPrice += (cartItem.phone.price - cartItem.phone.price * cartItem.phone.saleOff) * cartItem.quantity
+            else:
+                totalPrice += (cartItem.accessory.price - cartItem.accessory.price * cartItem.accessory.saleOff) * cartItem.quantity
+
         data = {
-            'cartItems': serializers.serialize('json', cartItems)
+            'cartItems': serializers.serialize('json', cartItems),
+            'totalPrice': totalPrice
         }
         return JsonResponse(data, status = 200)
 
