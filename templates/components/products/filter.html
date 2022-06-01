@@ -4,27 +4,29 @@
     <span>Lọc sản phẩm: </span>
   </div>
   <ul class="filter__attribute-list">
-    <li class="filter__attribute">
-      <div class="attribute-wrap">
-        <span>Phân loại</span>
-        <i class="fas fa-angle-down"></i>
+    {% if filterOn == 'accessory' %}
+      <li class="filter__attribute">
+        <div class="attribute-wrap">
+          <span>Phân loại</span>
+          <i class="fas fa-angle-down"></i>
 
-        <ul class="row gy-2 attribute-list">
-          <li class="col-4">
-            <div onclick="filter(null, null, null, 1)">Tai nghe</div>
-          </li>
-          <li class="col-4">
-            <div onclick="filter(null, null, null, 2)">Loa</div>
-          </li>
-          <li class="col-4">
-            <div onclick="filter(null, null, null, 4)">Cáp sạc</div>
-          </li>
-          <li class="col-4">
-            <div onclick="filter(null, null, null, 4)">Smartwatch</div>
-          </li>
-        </ul>
-      </div>
-    </li>
+          <ul class="row gy-2 attribute-list">
+            <li class="col-4">
+              <div onclick="filter(null, null, null, 1)">Tai nghe</div>
+            </li>
+            <li class="col-4">
+              <div onclick="filter(null, null, null, 2)">Loa</div>
+            </li>
+            <li class="col-4">
+              <div onclick="filter(null, null, null, 4)">Cáp sạc</div>
+            </li>
+            <li class="col-4">
+              <div onclick="filter(null, null, null, 4)">Smartwatch</div>
+            </li>
+          </ul>
+        </div>
+      </li>
+    {% endif %}
     <li class="filter__attribute">
       <div class="attribute-wrap">
         <span>Thương hiệu</span>
