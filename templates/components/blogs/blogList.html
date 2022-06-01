@@ -1,60 +1,81 @@
 {% if isHome %}
-<div class="container">
-  <div
-    class="blogs-new__header d-flex align-items-center justify-content-between flex-wrap flex-md-nowrap"
-  >
-    <h3 class="m-0 text-gradient order-1">
-      Tin tức
-    </h3>
+  <div class="container">
+    {% if noSwiper == None %}
     <div
-      class="blog-new__navigation d-flex align-items-center order-2 order-md-3"
+      class="blogs-new__header d-flex align-items-center justify-content-between flex-wrap flex-md-nowrap"
     >
-      <div class="blog-new__btn-prev">
-        <i class="fas fa-caret-square-left"></i>
-      </div>
-      <div class="blog-new__btn-next">
-        <i class="fas fa-caret-square-right"></i>
-      </div>
+    {% else %}
+    <div
+      class="blogs__header d-flex align-items-center justify-content-between flex-wrap flex-md-nowrap"
+    >
+    {% endif %}
+      <h3 class="m-0 text-gradient order-1">
+        Tin tức
+      </h3>
+
+        {% if noSwiper == None %}
+          <div
+            class="blog-new__navigation d-flex align-items-center order-2 order-md-3"
+          >
+            <div class="blog-new__btn-prev}">
+              <i class="fas fa-caret-square-left"></i>
+            </div>
+            <div class="blog-new__btn-next}">
+              <i class="fas fa-caret-square-right"></i>
+            </div>
+          </div>
+        {% endif %}
     </div>
+
+    {% if noSwiper == None %}
+      <div class="swiper blogs-new__list">
+        <div class="swiper-wrapper">
+          {% for blog in blogs %}
+            {% include 'components/blogs/blogItem.html' with blog=blog isHome="true" %}
+          {% endfor %}
+        </div>
+      </div>
+    {% else %}
+      <div class='row'>
+        {% for blog in blogs %}
+          <div class='col-xl-4 col-md-6 col-12 vertical'>
+            {% include 'components/blogs/blogItem.html' with blog=blog isHome="true" %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
   </div>
 
-  <div class="swiper blogs-new__list">
-    <div class="swiper-wrapper">
+  {% if noSwiper == None %}
+    <script>
+      const blogSwiper = new Swiper(".blogs-new__list", {
+        navigation: {
+          nextEl: ".blog-new__btn-next",
+          prevEl: ".blog-new__btn-prev",
+        },
+        slidesPerView: 1,
+        spaceBetween: 10,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        breakpoints: {
+          767: {
+            slidesPerView: 2,
+          },
+        },
+      });
+    </script>
+  {% endif %}
+{% else %}
+  <div class='blog__side-bar'>
+    <h2>
+      <span>Bài viết mới</span>
+    </h2>
+    <div class='recent-blog__list'>
       {% for blog in blogs %}
-        {% include 'components/blogs/blogItem.html' with blog=blog isHome="true" %}
+        {% include 'components/blogs/blogItem.html' with blog=blog %}
       {% endfor %}
     </div>
   </div>
-</div>
-
-<script>
-  const blogSwiper = new Swiper(".blogs-new__list", {
-    navigation: {
-      nextEl: ".blog-new__btn-next",
-      prevEl: ".blog-new__btn-prev",
-    },
-    slidesPerView: 1,
-    spaceBetween: 10,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
-    breakpoints: {
-      767: {
-        slidesPerView: 2,
-      },
-    },
-  });
-</script>
-{% else %}
-<div class='blog__side-bar'>
-  <h2>
-    <span>Bài viết mới</span>
-  </h2>
-  <div class='recent-blog__list'>
-    {% for blog in blogs %}
-      {% include 'components/blogs/blogItem.html' with blog=blog %}
-    {% endfor %}
-  </div>
-</div>
 {% endif %}

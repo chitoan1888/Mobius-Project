@@ -2,7 +2,8 @@
     margin-top: 50px;
 }
 
-.blogs-new__header h3 {
+.blogs-new__header h3,
+.blogs__header h3 {
     font-weight: 600;
 }
 
@@ -38,10 +39,6 @@
 }
 
 /* recent blogs */
-.blog__side-bar {
-
-}
-
 .blog__side-bar h2 {
     position: relative;
     width: 100%;

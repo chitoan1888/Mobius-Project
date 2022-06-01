@@ -77,7 +77,7 @@ def getPhoneDetail(request, phoneId):
     if is_ajax(request=request) and request.method == "GET":
         phone = Phone.objects.filter(id=phoneId)
         data = {
-            'phone': serializers.serialize('json', phone, fields=('name', 'thumbnail', 'price'))
+            'phone': serializers.serialize('json', phone, fields=('name', 'thumbnail', 'price', 'saleOff'))
         }
         return JsonResponse(data, status = 200)
 

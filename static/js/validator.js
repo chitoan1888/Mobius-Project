@@ -70,34 +70,6 @@ function Validator(options) {
             if(isFormValid) {
                 // Submit với JS
                 if(typeof options.onSubmit === 'function') {
-                    // var enableInputs = formElement.querySelectorAll('[name]');
-                    // var formValues = Array.from(enableInputs).reduce(function(values, input) {
-                    //     switch(input.type) {
-                    //         case 'radio':
-                    //             if (input.matches(':checked'))
-                    //                 values[input.name] = input.value;
-                    //             break;
-                    //         case 'checkbox':
-                    //             if(input.matches(':checked')) {
-                    //                 if (Array.isArray(values[input.name])) {
-                    //                     values[input.name].push(input.value);
-                    //                 }
-
-                    //                 values[input.name] = [input.value];
-                    //             } else {
-                    //                 values[input.name] = "";
-                    //                 return values;
-                    //             }
-                    //             break;
-                    //         case 'file':
-                    //             values[input.name] = input.files;
-                    //             break;
-                    //         default:
-                    //             values[input.name] = input.value.trim();
-                    //     }
-                    //     return values;
-                    // }, {});
-
                     options.onSubmit();
                 }
                 // Submit với hành vi mặc định
@@ -105,6 +77,8 @@ function Validator(options) {
                     formElement.submit();
                 }
             }
+
+            return isFormValid;
         }
 
         // Lặp qua mỗi rule và xử lý (lắng nghe sự kiện)

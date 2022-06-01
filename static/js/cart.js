@@ -63,10 +63,17 @@ const addProductToCard = (productId, type) => {
             sessionStorage.getItem('cart')
         );
 
+        let totalPrice = JSON.parse(
+            sessionStorage.getItem('totalPrice')
+        );
+
+        const productType = type === 1 ? 'phone' : 'accessory'
+
         if($(`.${productId}`).length === 1) {
             cart.map((cartItem) => {
                 if (cartItem.fields.phone === productId || cartItem.fields.accessory === productId) {
                     cartItem.fields.quantity = cartItem.fields.quantity + 1
+
                 }
             })
         } else {
@@ -79,15 +86,32 @@ const addProductToCard = (productId, type) => {
             })
         }
 
-        sessionStorage.setItem(
-            'cart',
-            JSON.stringify(cart)
-        )
-        getUserCartData();
+        $.ajax({
+            type: 'GET',
+            url: `/get/ajax/${productType}/${productId}/`,
+            data: null,
+            success: function (response) {
+                if(!response["valid"]){
+                    const productData = JSON.parse(response.phone)[0];
+                    totalPrice += (productData.fields.price - productData.fields.price * productData.fields.saleOff)
+
+                    sessionStorage.setItem(
+                        'cart',
+                        JSON.stringify(cart)
+                    )
+                    sessionStorage.setItem(
+                        'totalPrice',
+                        JSON.stringify(totalPrice)
+                    )
+                    getUserCartData();
+                }
+            },
+        })
     }
 }
 
-const removeProductFromCart = (productId, type) => {
+
+const removeProductFromCart = (productId, type, quantity) => {
     if (is_authenticated) {
         $.ajax({
             type: 'POST',
@@ -110,15 +134,37 @@ const removeProductFromCart = (productId, type) => {
             sessionStorage.getItem('cart')
         );
 
+        let totalPrice = JSON.parse(
+            sessionStorage.getItem('totalPrice')
+        );
+
         const newCart = cart.filter((cartItem) => (
             cartItem.fields.phone !== productId &&
             cartItem.fields.accessory !== productId
         ))
 
-        sessionStorage.setItem(
-            'cart',
-            JSON.stringify(newCart)
-        )
-        getUserCartData();
+        const productType = type === 1 ? 'phone' : 'accessory'
+
+        $.ajax({
+            type: 'GET',
+            url: `/get/ajax/${productType}/${productId}/`,
+            data: null,
+            success: function (response) {
+                if(!response["valid"]){
+                    const productData = JSON.parse(response.phone)[0];
+                    totalPrice = totalPrice - (productData.fields.price - productData.fields.price * productData.fields.saleOff) * quantity
+
+                    sessionStorage.setItem(
+                        'cart',
+                        JSON.stringify(newCart)
+                    )
+                    sessionStorage.setItem(
+                        'totalPrice',
+                        JSON.stringify(totalPrice)
+                    )
+                    getUserCartData();
+                }
+            },
+        })
     }
 }
